@@ -54,3 +54,16 @@ function buscar() {
     </div>
   `).join("");
 }
+// ======== FORMULARIO DE CONTACTO ========
+function enviarFormulario(e) {
+  e.preventDefault();
+  const nombre = document.getElementById("nombre").value;
+  const correo = document.getElementById("correo").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  if (!nombre || !correo || !mensaje) return;
+
+  document.getElementById("confirmacion").textContent =
+    "Gracias, " + nombre + ". Tu mensaje ha sido enviado correctamente.";
+  e.target.reset();
+}

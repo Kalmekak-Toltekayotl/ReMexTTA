@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiénes Somos | ReMexTTa</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f3f3f3;
-      color: #333;
-    }
-
-    header {
-      background-color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    .menu a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-    }
-
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    footer {
-      background-color: #222;
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    p {
-      max-width: 800px;
-      margin: 10px auto;
-      text-align: justify;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiénes somos | ReMexTTa</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <img src="logo.png" alt="Logo ReMexTTa" />
-    <nav class="menu">
-      <a href="index.html">Inicio</a>
-      <a href="#quienes">Quiénes somos</a>
-      <a href="index.html#contacto">Contacto</a>
+  <header class="site-header">
+    <nav class="main-nav">
+      <a class="brand" href="index.html"><span class="siglas">ReMexTTa</span><span class="small">Registro Mexicano de Terapeutas Tradicionales y Alternativos</span></a>
+      <div class="nav-links">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#consulta">Consulta</a>
+        <a href="quienes.html" class="active">Quiénes somos</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
     </nav>
+    <div class="header-right">
+      <a class="social fb" href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" rel="noreferrer">f</a>
+      <a class="social wa" id="wa-top-2" href="https://wa.me/527731538233" target="_blank" rel="noreferrer">✔</a>
+      <img src="logo.png" alt="Logo ReMexTTa" class="logo-header large" />
+    </div>
   </header>
 
-  <section class="section" id="quienes">
-    <h2>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h2>
-    <img src="logo.png" alt="Logo ReMexTTa" style="height:80px; margin-top:10px;">
-    <p>
-      El Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa) es una iniciativa ciudadana enfocada en fortalecer los procesos de profesionalización, análisis y valoración del ejercicio terapéutico, de acuerdo con los principios de la Ley General de Educación y la Ley General de Salud (artículos 15 fracción X, 19, 32 y 34).  
-      Nuestra misión se alinea con los ejes de gobierno para impulsar la inclusión, la salud comunitaria y la revalorización de los saberes tradicionales como parte integral del tejido social.
-    </p>
+  <main>
+    <section class="seccion quienes-intro">
+      <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+      <p class="intro-lead">El registro ciudadano que apoya la profesionalización, registro y seguimiento de terapeutas en prácticas tradicionales y complementarias en México.</p>
 
-    <h3>Misión</h3>
-    <p>
-      Impulsar la formación, actualización y reconocimiento de terapeutas tradicionales y alternativos en México, garantizando su práctica ética, responsable y socialmente comprometida en favor del bienestar integral de las personas y comunidades.
-    </p>
+      <!-- Logo a la derecha superior ya está en header (imagen grande) -->
+    </section>
 
-    <h3>Visión</h3>
-    <p>
-      Ser una organización líder a nivel nacional en el registro y acreditación de terapeutas tradicionales y alternativos, fomentando su integración en los sistemas educativos y de salud, con estándares éticos y de calidad reconocidos por la sociedad.
-    </p>
+    <section class="seccion quienes-contenido">
+      <p>
+        El <strong>ReMexTTa</strong> surge como una iniciativa ciudadana, técnica y social para fortalecer la calidad, ética y la difusión responsable de la medicina tradicional y las terapias alternativas.
+        Su objetivo central es <strong>apoyar la planificación educativa y el seguimiento de los egresados</strong> de formación particular y no escolarizada, mediante registros, análisis y valoración que permitan mejorar procesos de orientación integral en todos los niveles, modalidades y opciones educativas.
+      </p>
 
-    <h3>Filosofía</h3>
-    <p>
-      Nuestra filosofía se fundamenta en la ética, la empatía, la responsabilidad, el respeto por la diversidad cultural y la preservación de los saberes ancestrales.  
-      Promovemos la práctica responsable y la formalización de las terapias alternativas, fortaleciendo su presencia y legitimidad dentro del marco educativo y sanitario de México.
-    </p>
-  </section>
+      <p>
+        Desde un marco de colaboración con las políticas públicas de salud y educación, y en concordancia con principios de la Ley General de Salud y la Ley General de Educación, ReMexTTa fomenta la articulación entre la práctica terapéutica y los sistemas formales: <em>vigilancia ética, capacitación continua y documentación de resultados</em>. 
+        Este enfoque permite que los particulares puedan operar con responsabilidad social y técnica, sin que el registro sea en sí mismo un requisito de RVOE; más bien, buscamos generar evidencia, buenas prácticas y rutas de mejora que fortalezcan la inserción social y sanitaria de las terapias tradicionales.
+      </p>
 
-  <footer>
-    <p><strong>Registro Público Mexicano de Terapeutas Tradicionales y alternativos.</strong> Todos los derechos reservados.</p>
+      <h3>Misión</h3>
+      <p>
+        Contribuir a la profesionalización, seguimiento y valoración de terapeutas tradicionales y alternativos mediante un registro transparente, ético y orientado a la mejora continua, que favorezca la calidad asistencial y el bienestar comunitario.
+      </p>
+
+      <h3>Visión</h3>
+      <p>
+        Ser una referencia nacional en el registro, apoyo técnico y reconocimiento de la medicina tradicional y las terapias alternativas, impulsando políticas de inclusión y estándares que permitan su integración responsable en los sistemas de salud y educación a nivel federal.
+      </p>
+
+      <h3>Filosofía y Valores</h3>
+      <ul class="valores">
+        <li><strong>Respeto</strong> a los saberes tradicionales y a la diversidad cultural.</li>
+        <li><strong>Ética profesional</strong> como principio ineludible en la atención.</li>
+        <li><strong>Transparencia</strong> en la información y seguimiento de egresados.</li>
+        <li><strong>Solidaridad</strong> con las comunidades y el trabajo colectivo.</li>
+        <li><strong>Compromiso</strong> con la formación continua y la protección de la salud pública.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>KALMEKAK TOLTEKAYOTL.</strong> Todos los derechos reservados.</p>
     <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

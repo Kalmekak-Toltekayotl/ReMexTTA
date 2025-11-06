@@ -4,61 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReMexTTa - Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #222;
+    }
+
+    /* Encabezado */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #d9d9d9;
+      border-bottom: 2px solid #bfbfbf;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      padding: 6px 10px;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #bfbfbf;
+      border-radius: 4px;
+    }
+
+    .logo {
+      height: 100px;
+      margin-left: 20px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .facebook { background-color: #1877f2; }
+    .whatsapp { background-color: #25D366; }
+
+    main {
+      padding: 30px;
+      text-align: justify;
+    }
+
+    h1, h2 {
+      color: #111;
+    }
+
+    footer {
+      background-color: #cfcfcf;
+      color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 2px solid #bfbfbf;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Formulario de contacto */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #e6e6e6;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px #bfbfbf;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    button {
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <div class="header-left">
-      <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+    <div class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#consulta">Consulta</a>
+      <a href="#quienes">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
     </div>
-    <div class="header-center">
-      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-      <nav id="menu" class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="#consulta">Consulta</a>
-        <a href="quienes-somos.html">Quienes somos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-    <div class="header-right">
-      <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="social-icon facebook">f</a>
-      <a href="https://wa.me/527731538233" target="_blank" class="social-icon whatsapp">&#128241;</a>
+
+    <div class="social">
+      <a href="https://www.facebook.com/share/1BHEVw3dpf/" class="icon-circle facebook" target="_blank">f</a>
+      <a href="https://wa.me/527731538233" class="icon-circle whatsapp" target="_blank">☏</a>
+      <img src="logo.png" alt="ReMexTTa Logo" class="logo">
     </div>
   </header>
 
-  <main>
-    <section class="gallery">
-      <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-      <p>Reconociendo la práctica formal, ética y profesional de la medicina tradicional y las terapias alternativas en México.</p>
-      <div class="gallery-grid">
-        <img src="imagen1.jpg" alt="Graduado 1">
-        <img src="imagen2.jpg" alt="Graduado 2">
-        <img src="imagen3.jpg" alt="Graduado 3">
-        <img src="imagen4.jpg" alt="Graduado 4">
-      </div>
-    </section>
+  <main id="inicio">
+    <h1>Bienvenido al Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</h1>
+    <p>
+      Este registro tiene como propósito reconocer y visibilizar el trabajo de las y los terapeutas dedicados
+      a la práctica formal y responsable de la medicina tradicional mexicana y las terapias alternativas.
+      Nuestra misión es brindar un espacio confiable, verificable y accesible donde puedan consultarse los datos
+      de terapeutas egresados, escuelas y centros de formación comprometidos con la buena praxis y el desarrollo
+      del bienestar integral.
+    </p>
+  </main>
 
-    <section id="consulta" class="consulta">
-      <h2>Consulta de Registro</h2>
-      <p>Aquí se integrará la base de datos del Apps Script para consultar terapeutas registrados.</p>
-    </section>
+  <main id="consulta">
+    <h2>Consulta del Registro</h2>
+    <p>Desde aquí podrás consultar los registros de terapeutas tradicionales y alternativos certificados.</p>
+    <p><em>(Próximamente estará activa esta sección con el buscador oficial)</em></p>
+    <!-- Aquí se insertará tu Apps Script -->
+    <!-- <iframe src="TU_URL_DE_APPS_SCRIPT" width="100%" height="600"></iframe> -->
+  </main>
 
-    <section id="contacto" class="contacto">
-      <h2>Contáctanos</h2>
-      <p>¿Deseas formar parte del equipo ReMexTTa o tienes alguna duda? Envíanos un mensaje.</p>
-      <form id="contact-form">
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="tel" id="telefono" placeholder="Número telefónico" required>
-        <textarea id="mensaje" placeholder="Escribe tu mensaje o pregunta" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+  <main id="quienes">
+    <h2>Quiénes somos</h2>
+    <img src="logo.png" alt="Logo ReMexTTa" class="logo" style="float:right; height:120px; margin-left:15px;">
+    <p>
+      El Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa) surge con el propósito de fortalecer
+      los procesos educativos y de certificación en el ámbito de la medicina tradicional y las terapias alternativas.
+      Su objetivo es dar seguimiento a los egresados de instituciones particulares y centros de formación, en armonía
+      con los principios de la Ley General de Educación y los ejes rectores de la planeación educativa nacional.
+    </p>
+    <p>
+      Basado en los artículos 15 fracción X, 19, 32 y 34 de la Ley General de Salud, y en concordancia con la Ley General
+      de Educación, ReMexTTa busca fomentar la inclusión de la medicina tradicional y las terapias alternativas dentro
+      del tejido social formal, garantizando el derecho a una atención complementaria segura, ética y con sustento académico.
+    </p>
+
+    <h3>Misión</h3>
+    <p>
+      Promover el reconocimiento, formalización y desarrollo profesional de las y los terapeutas tradicionales y alternativos,
+      brindando una plataforma nacional confiable para el registro, consulta y vinculación educativa, en apego a la buena praxis
+      y al bienestar social.
+    </p>
+
+    <h3>Visión</h3>
+    <p>
+      Ser un referente nacional en la integración formal de la medicina tradicional y las terapias alternativas dentro de los
+      programas educativos y de salud pública, impulsando la calidad, la ética y la excelencia profesional en México.
+    </p>
+
+    <h3>Filosofía y valores</h3>
+    <p>
+      En ReMexTTa creemos en la responsabilidad, el respeto, la ética, la solidaridad y el compromiso social como pilares
+      fundamentales de toda práctica terapéutica. Nos guiamos por los principios de sabiduría ancestral, innovación responsable
+      y servicio a la comunidad.
+    </p>
+  </main>
+
+  <main id="contacto">
+    <h2>Contacto</h2>
+    <p>Si deseas formar parte del registro o comunicarte con nosotros, completa el siguiente formulario:</p>
+    <form id="contactForm">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="telefono">Número telefónico</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="mensaje">Mensaje o consulta</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
   </main>
 
   <footer>
+    <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
     <p><strong>KALMEKAK TOLTEKAYOTL.</strong> Todos los derechos reservados.</p>
-    <p>“Sé parte del equipo”.</p>
   </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const telefono = document.getElementById("telefono").value;
+      const mensaje = document.getElementById("mensaje").value;
+      const texto = `Nombre: ${nombre}%0ATeléfono: ${telefono}%0AMensaje: ${mensaje}`;
+      window.open(`https://wa.me/527731538233?text=${texto}`, "_blank");
+      alert("Has enviado correctamente tu mensaje y te responderemos lo antes posible.");
+      this.reset();
+    });
+  </script>
+
 </body>
 </html>

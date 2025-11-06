@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReMexTTa | Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="header-left">
+      <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+    </div>
+
+    <div class="header-center">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#consulta">Consulta</a>
+        <a href="https://kalmekak-toltekayotl.github.io/kalmekak-toltekayotl" target="_blank">Kalmekak Toltekayotl</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+      <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+    </div>
+  </header>
+
+  <!-- Sección de inicio -->
+  <section id="inicio" class="seccion">
+    <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+    <p>
+      Bienvenido(a) al Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa).  
+      Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional y terapias complementarias.
+    </p>
+  </section>
+
+  <!-- Sección de consulta -->
+  <section id="consulta" class="seccion">
+    <h2>Consulta de Terapeutas</h2>
+    <div class="buscador">
+      <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div id="resultados"></div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="seccion">
+    <h2>Galería de Graduados</h2>
+    <div class="galeria">
+      <!-- Aquí irán tus imágenes -->
+      <img src="img/grad1.jpg" alt="Graduado 1">
+      <img src="img/grad2.jpg" alt="Graduado 2">
+      <img src="img/grad3.jpg" alt="Graduado 3">
+      <img src="img/grad4.jpg" alt="Graduado 4">
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p><strong>Titular:</strong> KALMEKAK TOLTEKAYOTL. Todos los derechos reservados.</p>
+    <p><strong>Dirección:</strong> Av Industrial #2, Col. Tolteca Barrio Boxfi, Atotonilco de Tula, Hidalgo. C.P. 42985</p>
+    <p><strong>Teléfono:</strong> <a href="tel:+527731538233">7731538233</a></p>
+    <p><strong>Correo:</strong> <a href="mailto:kalmekaktoltekayotl@gmail.com">kalmekaktoltekayotl@gmail.com</a></p>
+    <p class="unete">✨ Sé parte del equipo ✨</p>
+  </section>
+
+  <!-- Pie -->
+  <footer>
+    <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+  </footer>
+</body>
+</html>

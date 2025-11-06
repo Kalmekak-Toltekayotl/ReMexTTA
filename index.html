@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReMexTTa | Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
+
 <body>
-  <header class="site-header">
-    <nav class="main-nav">
-      <a class="brand" href="index.html"><span class="siglas">ReMexTTa</span><span class="small">Registro Mexicano de Terapeutas Tradicionales y Alternativos</span></a>
-      <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#consulta" class="active">Consulta</a>
-        <a href="quienes.html">Quiénes somos</a>
-        <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
-      </div>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="header-left">
+      <h2>ReMexTTa</h2>
+    </div>
+
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#consulta">Consulta</a>
+      <a href="quienes-somos.html">Quienes somos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
+
     <div class="header-right">
-      <a class="social fb" href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" rel="noreferrer">f</a>
-      <a class="social wa" id="wa-top" href="https://wa.me/527731538233" target="_blank" rel="noreferrer">✔</a>
-      <!-- logo: sube logo.png al mismo nivel que index.html -->
-      <img src="logo.png" alt="Logo ReMexTTa" class="logo-header" />
+      <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+      <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
     </div>
   </header>
 
-  <main>
-    <section id="inicio" class="seccion inicio">
-      <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-      <p class="lead">Bienvenido(a) al registro público que promueve la profesionalización, el seguimiento y la difusión responsable de la medicina tradicional y las terapias alternativas en México.</p>
-      <div class="hero-gallery">
-        <img src="img/grad1.jpg" alt="Graduado 1">
-        <img src="img/grad2.jpg" alt="Graduado 2">
-        <img src="img/grad3.jpg" alt="Graduado 3">
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio" class="seccion">
+    <div class="contenido">
+      <div class="texto">
+        <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+        <p>
+          Bienvenido(a) a ReMexTTa, un espacio dedicado a la profesionalización y reconocimiento
+          de terapeutas tradicionales y alternativos en México.
+        </p>
       </div>
-    </section>
-
-    <section id="consulta" class="seccion consulta-section">
-      <h2>Consulta de Terapeutas</h2>
-      <p>Busca por nombre, especialidad, localidad o clave para encontrar a los terapeutas registrados.</p>
-
-      <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre, especialidad, clave o localidad...">
-        <button id="buscarBtn">Buscar</button>
+      <div class="imagen-logo">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo-grande">
       </div>
-
-      <div id="resultados" class="resultados"></div>
-    </section>
-
-    <section id="galeria" class="seccion galeria-section">
-      <h2>Galería de Graduados</h2>
-      <div class="galeria-grid">
-        <img src="img/grad1.jpg" alt="Graduado 1">
-        <img src="img/grad2.jpg" alt="Graduado 2">
-        <img src="img/grad3.jpg" alt="Graduado 3">
-        <img src="img/grad4.jpg" alt="Graduado 4">
-      </div>
-    </section>
-
-    <section id="contacto" class="seccion contacto-section">
-      <h2>Contáctanos</h2>
-      <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
-
-      <!-- Botón que abre el formulario en modal/in-page -->
-      <button id="openContact" class="btn-primary">Contacto</button>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p><strong>KALMEKAK TOLTEKAYOTL.</strong> Todos los derechos reservados.</p>
-    <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
-  </footer>
-
-  <!-- Modal de contacto (hidden by default) -->
-  <div id="contactModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal" aria-label="Cerrar">✕</button>
-      <h3>Contacto</h3>
-      <p>Escribe tu nombre, teléfono y tu mensaje. Te responderemos a la brevedad.</p>
-      <form id="contactForm">
-        <label for="c_nombre">Nombre completo</label>
-        <input id="c_nombre" type="text" required placeholder="Tu nombre completo">
-
-        <label for="c_telefono">Teléfono</label>
-        <input id="c_telefono" type="tel" required placeholder="10 o 12 dígitos (incluye lada si aplica)">
-
-        <label for="c_mensaje">Mensaje</label>
-        <textarea id="c_mensaje" rows="5" required placeholder="Escribe tu mensaje o pregunta"></textarea>
-
-        <div class="modal-actions">
-          <button type="button" id="cancelContact" class="btn-secondary">Cancelar</button>
-          <button type="submit" class="btn-primary">Enviar</button>
-        </div>
-      </form>
     </div>
-  </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- SECCIÓN CONSULTA -->
+  <section id="consulta" class="seccion">
+    <h2>Consulta de Terapeutas</h2>
+    <div class="buscador">
+      <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div id="resultados"></div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="seccion">
+    <h2>Galería de Graduados</h2>
+    <div class="galeria">
+      <img src="img/grad1.jpg" alt="Graduado 1">
+      <img src="img/grad2.jpg" alt="Graduado 2">
+      <img src="img/grad3.jpg" alt="Graduado 3">
+      <img src="img/grad4.jpg" alt="Graduado 4">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p><strong>Titular:</strong> KALMEKAK TOLTEKAYOTL. Todos los derechos reservados.</p>
+    <p class="unete">Deseas registrarte o registrar a tus egresados, únete a nuestro equipo, contáctanos.</p>
+
+    <form id="contactForm" class="formulario">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="tel" id="telefono" placeholder="Número telefónico" required>
+      <textarea id="mensaje" placeholder="Escribe tu mensaje o consulta..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p id="confirmacion" class="confirmacion"></p>
+  </section>
+
+  <!-- PIE -->
+  <footer>
+    <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+  </footer>
 </body>
 </html>

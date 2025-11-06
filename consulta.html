@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta - Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de Terapeutas | ReMexTTa</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-
 <body>
-  <header class="fade">
-    <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="consulta.html" class="active">Consulta</a></li>
-        <li><a href="quienes.html">Quiénes Somos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="fade-container">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
+      <div class="header-center">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html" class="active">Consulta</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+        <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+      </div>
+    </header>
 
-  <main>
-    <section class="fade">
+    <section class="seccion fade-section">
       <h2>Consulta de Terapeutas Registrados</h2>
-      <p>
-        Ingresa el nombre o clave del terapeuta que deseas buscar.  
-        Este sistema te permitirá validar la información oficial de registro dentro del ReMexTTa.
-      </p>
+      <p>Busca terapeutas certificados por nombre, especialidad o clave de registro.</p>
 
-      <div class="app-consulta">
-        <input type="text" id="buscador" placeholder="Ejemplo: Rubí Ayala o KT-001">
-        <button id="buscarBtn">Buscar</button>
-        <div id="resultado"></div>
+      <div class="buscador">
+        <input type="text" id="query" placeholder="Ejemplo: Fitoterapia, KT-025, Rubí Ayala">
+        <button onclick="buscar()">Buscar</button>
       </div>
-
-      <div class="volver">
-        <a href="index.html" class="btn-volver">← Volver al inicio</a>
-      </div>
+      <div id="resultados"></div>
     </section>
-  </main>
 
-  <footer>
-    <p>
-      Titular: Registro Público Mexicano de Terapeutas Tradicionales y Alternativos.<br>
-      &copy; 2025 Todos los derechos reservados.
-    </p>
-  </footer>
+    <footer>
+      <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReMexTTa - Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReMexTTa | Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
-<body class="fade-in">
-  <header>
-    <nav class="navbar">
-      <div class="nav-left">
-        <ul>
-          <li><a href="index.html" class="fade-link active">Inicio</a></li>
-          <li><a href="quienes.html" class="fade-link">Quiénes Somos</a></li>
-          <li><a href="contacto.html" class="fade-link">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <img src="logo.png" alt="ReMexTTa" class="logo-grande">
-      </div>
+<body>
+  <header class="fade-in">
+    <div class="logo-container">
+      <img src="logo-remextta.png" alt="Logo ReMexTTa" class="logo" />
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="quienes.html">Quiénes Somos</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="fade-in">
     <section class="hero">
-      <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-      <p>
-        Promovemos el reconocimiento y la profesionalización de las terapias tradicionales y alternativas en México.
-      </p>
-      <a href="contacto.html" class="btn fade-link">
-        ¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.
-      </a>
+      <div class="hero-content">
+        <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+        <p>Confianza, profesionalismo y reconocimiento nacional para terapeutas y centros de formación.</p>
+      </div>
+    </section>
+
+    <section class="equipo">
+      <h2>Únete a nuestro equipo</h2>
+      <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos</h2>
+      <p>Estamos para ayudarte a formar parte del registro nacional de terapeutas tradicionales y alternativos.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
+        <a href="https://wa.me/5215512345678" target="_blank" aria-label="WhatsApp"><img src="whatsapp.svg" alt="WhatsApp" /></a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</p>
+    <p>&copy; 2025 ReMexTTa - Registro Mexicano de Terapeutas Tradicionales y Alternativos</p>
   </footer>
 </body>
 </html>

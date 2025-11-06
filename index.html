@@ -4,49 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReMexTTa | Registro Mexicano de Terapeutas Tradicionales y Alternativos</title>
+
+  <!-- Favicon institucional -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
+
 <body>
-  <header class="fade-in">
-    <div class="logo-container">
-      <img src="logo-remextta.png" alt="Logo ReMexTTa" class="logo" />
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="header-left">
+      <img src="logo.png" alt="Logo ReMexTTa" class="logo">
     </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="quienes.html">Quiénes Somos</a></li>
-        <li><a href="#contacto">Contáctanos</a></li>
-      </ul>
-    </nav>
+
+    <div class="header-center">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="quienes.html">Quiénes Somos</a>
+        <a href="#consulta">Consulta</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+      <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+    </div>
   </header>
 
-  <main class="fade-in">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-        <p>Confianza, profesionalismo y reconocimiento nacional para terapeutas y centros de formación.</p>
-      </div>
-    </section>
+  <!-- Sección de inicio -->
+  <section id="inicio" class="seccion fade">
+    <h1>Registro Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+    <p>
+      Bienvenido(a) al Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa).  
+      Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional y terapias complementarias.
+    </p>
+  </section>
 
-    <section class="equipo">
-      <h2>Únete a nuestro equipo</h2>
-      <p>¿Deseas registrarte o registrar a tus egresados? Únete a nuestro equipo, contáctanos.</p>
-      <a href="#contacto" class="btn">Contáctanos</a>
-    </section>
+  <!-- Sección de consulta -->
+  <section id="consulta" class="seccion fade">
+    <h2>Consulta de Terapeutas</h2>
+    <div class="buscador">
+      <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div id="resultados"></div>
+  </section>
 
-    <section id="contacto" class="contacto">
-      <h2>Contáctanos</h2>
-      <p>Estamos para ayudarte a formar parte del registro nacional de terapeutas tradicionales y alternativos.</p>
-      <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="facebook.svg" alt="Facebook" /></a>
-        <a href="https://wa.me/5215512345678" target="_blank" aria-label="WhatsApp"><img src="whatsapp.svg" alt="WhatsApp" /></a>
-      </div>
-    </section>
-  </main>
+  <!-- Galería -->
+  <section id="galeria" class="seccion fade">
+    <h2>Galería de Graduados</h2>
+    <div class="galeria">
+      <img src="img/grad1.jpg" alt="Graduado 1">
+      <img src="img/grad2.jpg" alt="Graduado 2">
+      <img src="img/grad3.jpg" alt="Graduado 3">
+      <img src="img/grad4.jpg" alt="Graduado 4">
+    </div>
+  </section>
 
+  <!-- Contacto -->
+  <section id="contacto" class="seccion fade">
+    <h2>Contacto</h2>
+    <p>✨ Sé parte del Registro Mexicano de Terapeutas Tradicionales y Alternativos ✨</p>
+
+    <div class="formulario-contacto">
+      <input type="text" id="nombre" placeholder="Tu nombre completo">
+      <input type="tel" id="telefono" placeholder="Tu número telefónico">
+      <textarea id="mensaje" placeholder="Escribe tu mensaje o pregunta aquí..."></textarea>
+      <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+    <p id="confirmacion" class="confirmacion"></p>
+  </section>
+
+  <!-- Pie -->
   <footer>
-    <p>&copy; 2025 ReMexTTa - Registro Mexicano de Terapeutas Tradicionales y Alternativos</p>
+    <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
   </footer>
 </body>
 </html>

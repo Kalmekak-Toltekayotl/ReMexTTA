@@ -1,3 +1,7 @@
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
 function buscar() {
   const query = document.getElementById("query").value.trim();
   const resultadosDiv = document.getElementById("resultados");
@@ -23,18 +27,3 @@ function buscar() {
       resultadosDiv.innerHTML = "<p>Error al buscar. Intenta de nuevo.</p>";
     });
 }
-
-// ENVÍO DE MENSAJE A WHATSAPP
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const nombre = document.getElementById("nombre").value;
-  const telefono = document.getElementById("telefono").value;
-  const mensaje = document.getElementById("mensaje").value;
-
-  const texto = `Nuevo mensaje de contacto:%0A%0ANombre: ${nombre}%0ATeléfono: ${telefono}%0AMensaje: ${mensaje}`;
-  const url = `https://wa.me/527731538233?text=${texto}`;
-  
-  window.open(url, "_blank");
-  document.getElementById("confirmacion").textContent = "Has enviado correctamente tu mensaje. Te responderemos lo antes posible.";
-  document.getElementById("contactForm").reset();
-});

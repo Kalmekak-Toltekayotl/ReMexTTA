@@ -1,30 +1,49 @@
-// Transición suave entre páginas (fade-out)
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".fade-link");
+// Efecto fade entre páginas
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
 
-  links.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.body.classList.add("fade-out");
-      setTimeout(() => {
-        window.location = link.href;
-      }, 600);
+  document.querySelectorAll("a[href]").forEach(link => {
+    if (link.getAttribute("target") === "_blank") return;
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.remove("loaded");
+        setTimeout(() => window.location.href = href, 2000);
+      }
     });
   });
 });
 
-// Fade-in al cargar la página
-window.addEventListener("pageshow", () => {
-  document.body.classList.add("fade-in");
-});
+// Menú responsive
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
 
-// Envío simulado del formulario de contacto
-const form = document.getElementById("contactoForm");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    document.getElementById("confirmacion").textContent =
-      "Has enviado correctamente tu mensaje. Te responderemos lo antes posible.";
-    form.reset();
-  });
+// Buscador con App Script
+function buscar() {
+  const query = document.getElementById("query").value.trim();
+  const resultadosDiv = document.getElementById("resultados");
+  resultadosDiv.innerHTML = "<p>Buscando...</p>";
+
+  fetch("https://script.google.com/macros/s/TU_SCRIPT_ID/exec?q=" + encodeURIComponent(query))
+    .then(res => res.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
+
+      resultadosDiv.innerHTML = data.map(item => `
+        <div class="registro">
+          <h3>${item.nombre}</h3>
+          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
+          <p><strong>Clave:</strong> ${item.clave}</p>
+        </div>
+      `).join('');
+    })
+    .catch(err => {
+      console.error(err);
+      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta de nuevo.</p>";
+    });
 }

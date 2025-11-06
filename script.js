@@ -1,57 +1,49 @@
-// ======== EFECTO MENÚ RESPONSIVO ========
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("active");
-}
+// Efecto fade entre páginas
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
 
-// ======== EFECTO FADE AL DESPLAZAR ========
-const sections = document.querySelectorAll(".fade-section");
-
-function mostrarSecciones() {
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const secTop = sec.getBoundingClientRect().top;
-    if (secTop < triggerBottom) sec.classList.add("visible");
+  document.querySelectorAll("a[href]").forEach(link => {
+    if (link.getAttribute("target") === "_blank") return;
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.remove("loaded");
+        setTimeout(() => window.location.href = href, 2000);
+      }
+    });
   });
+});
+
+// Menú responsive
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
 }
 
-window.addEventListener("scroll", mostrarSecciones);
-window.addEventListener("load", mostrarSecciones);
-
-// ======== BUSCADOR SIMULADO ========
+// Buscador con App Script
 function buscar() {
-  const query = document.getElementById("query").value.toLowerCase();
-  const resultados = document.getElementById("resultados");
+  const query = document.getElementById("query").value.trim();
+  const resultadosDiv = document.getElementById("resultados");
+  resultadosDiv.innerHTML = "<p>Buscando...</p>";
 
-  if (query === "") {
-    resultados.innerHTML = "<p>Por favor, ingresa un nombre o especialidad.</p>";
-    return;
-  }
+  fetch("https://script.google.com/macros/s/TU_SCRIPT_ID/exec?q=" + encodeURIComponent(query))
+    .then(res => res.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
 
-  // Simulación de resultados
-  const terapeutas = [
-    { nombre: "Rubí Ayala", especialidad: "Fitoterapia", clave: "KT-006" },
-    { nombre: "María López", especialidad: "Masaje Holístico", clave: "KT-025" },
-    { nombre: "José Pérez", especialidad: "Acupuntura", clave: "KT-104" }
-  ];
-
-  const encontrados = terapeutas.filter(t =>
-    t.nombre.toLowerCase().includes(query) ||
-    t.especialidad.toLowerCase().includes(query) ||
-    t.clave.toLowerCase().includes(query)
-  );
-
-  if (encontrados.length === 0) {
-    resultados.innerHTML = "<p>No se encontraron resultados.</p>";
-    return;
-  }
-
-  resultados.innerHTML = encontrados.map(t => `
-    <div class="tarjeta">
-      <h3>${t.nombre}</h3>
-      <p><strong>Especialidad:</strong> ${t.especialidad}</p>
-      <p><strong>Clave:</strong> ${t.clave}</p>
-    </div>
-  `).join("");
+      resultadosDiv.innerHTML = data.map(item => `
+        <div class="registro">
+          <h3>${item.nombre}</h3>
+          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
+          <p><strong>Clave:</strong> ${item.clave}</p>
+        </div>
+      `).join('');
+    })
+    .catch(err => {
+      console.error(err);
+      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta de nuevo.</p>";
+    });
 }
-

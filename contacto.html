@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - ReMexTTa</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | ReMexTTa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<body class="fade-in">
-  <header>
-    <nav class="navbar">
-      <div class="nav-left">
-        <ul>
-          <li><a href="index.html" class="fade-link">Inicio</a></li>
-          <li><a href="quienes.html" class="fade-link">Quiénes Somos</a></li>
-          <li><a href="contacto.html" class="fade-link active">Contacto</a></li>
-        </ul>
+<body>
+  <div class="fade-container">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
       </div>
-      <div class="nav-right">
-        <img src="logo.png" alt="ReMexTTa" class="logo-grande">
+      <div class="header-center">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html">Consulta</a>
+          <a href="contacto.html" class="active">Contacto</a>
+        </nav>
       </div>
-    </nav>
-  </header>
+      <div class="header-right">
+        <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+        <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+      </div>
+    </header>
 
-  <main class="seccion-contacto">
-    <h1>Contáctanos</h1>
-    <p>Completa el formulario para ponerte en contacto con nuestro equipo.</p>
+    <section class="seccion" id="contacto">
+      <h2>Contacto</h2>
+      <p><strong>Titular:</strong> KALMEKAK TOLTEKAYOTL. Todos los derechos reservados.</p>
+      <p><strong>Dirección:</strong> Av Industrial #2, Col. Tolteca Barrio Boxfi, Atotonilco de Tula, Hidalgo. C.P. 42985</p>
+      <p><strong>Teléfono:</strong> <a href="tel:+527731538233">7731538233</a></p>
+      <p><strong>Correo:</strong> <a href="mailto:kalmekaktoltekayotl@gmail.com">kalmekaktoltekayotl@gmail.com</a></p>
+      <p class="unete">✨ Sé parte del equipo ✨</p>
+    </section>
 
-    <form class="contacto-form" id="contactoForm">
-      <label>Nombre completo:</label>
-      <input type="text" id="nombre" placeholder="Tu nombre completo" required>
-
-      <label>Teléfono:</label>
-      <input type="tel" id="telefono" placeholder="Tu número de teléfono" required>
-
-      <label>Mensaje:</label>
-      <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-
-    <p id="confirmacion" class="mensaje-confirmacion"></p>
-  </main>
-
-  <footer>
-    <p>© 2025 Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</p>
-  </footer>
+    <footer>
+      <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+    </footer>
+  </div>
 </body>
 </html>

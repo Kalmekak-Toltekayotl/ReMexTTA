@@ -5,36 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiénes Somos | ReMexTTa</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="fade-in">
-    <div class="logo-container">
-      <img src="logo-remextta.png" alt="Logo ReMexTTa" class="logo" />
-    </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="quienes.html" class="active">Quiénes Somos</a></li>
-        <li><a href="index.html#contacto">Contáctanos</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="fade-container">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
+      <div class="header-center">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html" class="active">Quiénes Somos</a>
+          <a href="consulta.html">Consulta</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+        <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+      </div>
+    </header>
 
-  <main class="fade-in">
-    <section class="hero">
+    <section class="seccion">
       <h1>Quiénes Somos</h1>
-      <p>El Registro Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa) es una institución dedicada al reconocimiento, profesionalización y respaldo de terapeutas en México, fomentando la confianza y la calidad en los servicios tradicionales y alternativos de salud.</p>
-    </section>
+      <p><strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</strong></p>
+      <p>
+        El ReMexTTa surge como una iniciativa ciudadana y académica encaminada a fortalecer la calidad, formalidad y reconocimiento 
+        de la práctica de la medicina tradicional y las terapias alternativas en México.
+      </p>
+      <p>
+        Este registro tiene como propósito contribuir a la planeación y seguimiento del sistema educativo nacional, particularmente en 
+        el ámbito de la formación no escolarizada y de carácter particular, atendiendo lo dispuesto por la Ley General de Educación, 
+        que establece el derecho de los particulares a impartir educación y capacitación en todos los niveles, tipos y modalidades 
+        siempre que promuevan el desarrollo integral del individuo y el fortalecimiento de la cultura nacional.
+      </p>
+      <p>
+        En concordancia con el Artículo 34 de la Ley General de Salud, que reconoce la participación social en los servicios de salud, 
+        y con el Artículo 15 fracción X que promueve la investigación y desarrollo de la medicina tradicional mexicana, el ReMexTTa 
+        tiene la función de dar seguimiento, análisis y valoración del desempeño profesional de los terapeutas egresados de 
+        instituciones particulares, contribuyendo al fortalecimiento de los procesos educativos, éticos y comunitarios.
+      </p>
+      <p>
+        Este registro busca que la práctica terapéutica tradicional y alternativa se integre formalmente en el tejido social, 
+        fomentando su reconocimiento, profesionalización y permanencia dentro de los marcos legales y culturales de nuestro país.
+      </p>
 
-    <section class="equipo">
-      <h2>Nuestro Compromiso</h2>
-      <p>ReMexTTa busca consolidar un registro nacional confiable, fortalecer la credibilidad del sector y dignificar la labor de terapeutas tradicionales y alternativos a través de procesos de validación, formación continua y vinculación con instituciones públicas y privadas.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 ReMexTTa - Registro Mexicano de Terapeutas Tradicionales y Alternativos</p>
-  </footer>
-</body>
-</html>
+      <h2>Misión</h2

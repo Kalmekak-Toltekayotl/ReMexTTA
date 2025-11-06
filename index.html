@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio - Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReMexTTa | Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
-
 <body>
-  <header class="fade">
-    <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="#consulta">Consulta</a></li>
-        <li><a href="consulta.html">Consulta independiente</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="fade-container">
+    <!-- Encabezado -->
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
+      <div class="header-center">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+          <a href="index.html" class="active">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html">Consulta</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
+        <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
+      </div>
+    </header>
 
-  <main>
-    <!-- Mensaje de bienvenida -->
-    <section class="bienvenida fade">
-      <h2>Bienvenido(a)</h2>
+    <!-- Sección de inicio -->
+    <section id="inicio" class="seccion fade-section">
+      <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
       <p>
-        Este es el portal oficial del <strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</strong>.  
-        Aquí puedes consultar el registro de terapeutas acreditados y validar su información profesional.
+        Bienvenido(a) al Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa). 
+        Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional y terapias complementarias.
       </p>
     </section>
 
-    <!-- Script de consulta tipo buscador -->
-    <section id="consulta" class="fade">
+    <!-- Buscador activo -->
+    <section id="consulta" class="seccion fade-section">
       <h2>Consulta de Terapeutas</h2>
-      <div class="app-consulta">
-        <input type="text" id="buscador" placeholder="Ingresa el nombre o clave del terapeuta...">
-        <button id="buscarBtn">Buscar</button>
-        <div id="resultado"></div>
+      <div class="buscador">
+        <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+        <button onclick="buscar()">Buscar</button>
       </div>
+      <div id="resultados"></div>
     </section>
-  </main>
 
-  <footer>
-    <p>
-      Titular: Registro Público Mexicano de Terapeutas Tradicionales y Alternativos.<br>
-      &copy; 2025 Todos los derechos reservados.
-    </p>
-  </footer>
+    <!-- Pie -->
+    <footer>
+      <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+    </footer>
+  </div>
 </body>
 </html>

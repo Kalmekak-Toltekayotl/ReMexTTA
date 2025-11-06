@@ -1,155 +1,137 @@
-/* ===== Estilo general ===== */
-body {
-  font-family: "Segoe UI", sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #e6e6e6;
-  color: #1a1a1a;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-body.fade-in {
-  opacity: 1;
+body {
+  background-color: #f0f0f0;
+  color: #222;
 }
 
-body.fade-out {
-  opacity: 0;
-}
-
-/* ===== Encabezado ===== */
 header {
-  background-color: #d1d1d1;
-  border-bottom: 3px solid #bfbfbf;
-  padding: 10px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* ===== Menú ===== */
-.navbar {
+  background: linear-gradient(90deg, #dcdcdc, #e6e6e6, #c0c0c0);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.nav-left ul {
+.logo {
+  height: 120px; /* logo más grande */
+}
+
+.menu {
   list-style: none;
   display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  gap: 2rem;
 }
 
-.nav-left a {
+.menu a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: #111;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
-.nav-left a:hover,
-.nav-left a.active {
-  color: #666666;
+.menu a:hover,
+.menu a.active {
+  color: #555;
+  border-bottom: 2px solid #aaa;
 }
 
-.logo-grande {
-  height: 120px;
-  width: auto;
-}
-
-/* ===== Hero ===== */
 .hero {
+  background: #d9d9d9;
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #f7f7f7, #e6e6e6);
+  padding: 5rem 2rem;
 }
 
 .hero h1 {
-  font-size: 2.3em;
+  font-size: 2rem;
   color: #111;
 }
 
 .hero p {
-  font-size: 1.1em;
-  margin-bottom: 30px;
+  color: #333;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.equipo {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #efefef;
+}
+
+.equipo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.equipo p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
-  display: inline-block;
-  background-color: #4d4d4d;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: #2b2b2b;
+  background-color: #555;
 }
 
-/* ===== Contenido ===== */
-main {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-main h1, main h2 {
-  color: #111;
-  margin-bottom: 15px;
-}
-
-main p {
-  text-align: justify;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* ===== Formulario ===== */
-.contacto-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contacto-form input,
-.contacto-form textarea {
-  padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-.contacto-form button {
-  background-color: #4d4d4d;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contacto-form button:hover {
-  background-color: #2b2b2b;
-}
-
-.mensaje-confirmacion {
-  margin-top: 20px;
-  color: green;
-  font-weight: 600;
+.contacto {
+  background-color: #ddd;
   text-align: center;
+  padding: 3rem 2rem;
 }
 
-/* ===== Pie de página ===== */
+.contacto h2 {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #d1d1d1;
-  border-top: 3px solid #bfbfbf;
-  font-size: 0.9em;
+  padding: 1.5rem;
+  background-color: #cfcfcf;
+  font-size: 0.9rem;
   color: #333;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

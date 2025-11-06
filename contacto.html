@@ -28,13 +28,18 @@
       </div>
     </header>
 
-    <section class="seccion" id="contacto">
-      <h2>Contacto</h2>
-      <p><strong>Titular:</strong> KALMEKAK TOLTEKAYOTL. Todos los derechos reservados.</p>
-      <p><strong>Dirección:</strong> Av Industrial #2, Col. Tolteca Barrio Boxfi, Atotonilco de Tula, Hidalgo. C.P. 42985</p>
-      <p><strong>Teléfono:</strong> <a href="tel:+527731538233">7731538233</a></p>
-      <p><strong>Correo:</strong> <a href="mailto:kalmekaktoltekayotl@gmail.com">kalmekaktoltekayotl@gmail.com</a></p>
-      <p class="unete">✨ Sé parte del equipo ✨</p>
+    <section class="seccion fade-section">
+      <h2>Contáctanos</h2>
+      <p>Para dudas, sugerencias o registro de terapeutas, comunícate con nosotros:</p>
+
+      <form class="form-contacto" onsubmit="enviarFormulario(event)">
+        <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+        <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+        <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+
+      <p id="confirmacion" class="confirmacion"></p>
     </section>
 
     <footer>

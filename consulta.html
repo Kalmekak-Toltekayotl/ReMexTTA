@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consulta | ReMexTTa</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="fade-container">
+    <!-- Encabezado -->
     <header class="header">
       <div class="header-left">
         <img src="logo.png" alt="Logo ReMexTTa" class="logo">
@@ -28,18 +28,67 @@
       </div>
     </header>
 
-    <section class="seccion">
+    <!-- Buscador en la página de consulta -->
+    <section id="consulta" class="seccion">
       <h2>Consulta de Terapeutas</h2>
+      <p>Ingresa el nombre o la clave del terapeuta que deseas consultar.</p>
       <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+        <input type="text" id="query" placeholder="Buscar por nombre o clave...">
         <button onclick="buscar()">Buscar</button>
       </div>
       <div id="resultados"></div>
     </section>
 
+    <!-- Pie -->
     <footer>
       <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
     </footer>
   </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxEjemploURL/exec"; // 🔹 reemplaza con tu URL del App Script
+
+    async function buscar() {
+      const query = document.getElementById("query").value.trim();
+      const contenedor = document.getElementById("resultados");
+
+      if (!query) {
+        contenedor.innerHTML = "<p>Por favor ingresa un nombre o clave para buscar.</p>";
+        return;
+      }
+
+      contenedor.innerHTML = "<p>Buscando...</p>";
+
+      try {
+        const response = await fetch(`${scriptURL}?q=${encodeURIComponent(query)}`);
+        const resultados = await response.json();
+
+        if (resultados.length === 0) {
+          contenedor.innerHTML = "<p>No se encontraron terapeutas con ese criterio.</p>";
+          return;
+        }
+
+        let html = "<table border='1' cellpadding='6' style='margin-top:10px;border-collapse:collapse;width:100%;'>";
+        html += "<tr><th>Nombre</th><th>Clave</th><th>Especialidad</th><th>Institución</th><th>Localidad</th><th>Estado</th></tr>";
+
+        resultados.forEach(t => {
+          html += `<tr>
+            <td>${t.NOMBRE}</td>
+            <td>${t.CLAVE}</td>
+            <td>${t.ESPECIALIDAD}</td>
+            <td>${t.INSTITUCIÓN}</td>
+            <td>${t.LOCALIDAD}</td>
+            <td>${t.ESTADO}</td>
+          </tr>`;
+        });
+
+        html += "</table>";
+        contenedor.innerHTML = html;
+      } catch (error) {
+        console.error(error);
+        contenedor.innerHTML = "<p>Error al buscar. Intenta nuevamente.</p>";
+      }
+    }
+  </script>
 </body>
 </html>

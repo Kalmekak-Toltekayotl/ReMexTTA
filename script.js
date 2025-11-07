@@ -47,3 +47,47 @@ function buscar() {
       resultadosDiv.innerHTML = "<p>Error al buscar. Intenta de nuevo.</p>";
     });
 }
+const appScriptURL = "https://script.google.com/macros/s/AKfycby3U-k6JifI8i72uuQ9yyzBOIYOJJtSwzTvuYq0UsNL1ewwUCLkf9kHz7crn0Eco4Y3OA/exec";
+
+function buscar() {
+  const input = document.getElementById("searchInput");
+  const resultadosDiv = document.getElementById("resultados");
+  const termino = input.value.trim();
+
+  if (termino === "") {
+    resultadosDiv.innerHTML = "<p>Por favor escribe un nombre o clave.</p>";
+    return;
+  }
+
+  resultadosDiv.innerHTML = "<p>Buscando...</p>";
+
+  fetch(appScriptURL, {
+    method: "POST",
+    body: JSON.stringify({ search: termino }),
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.length === 0) {
+        resultadosDiv.innerHTML = "<p>No se encontraron registros.</p>";
+        return;
+      }
+
+      let html = "<table><tr><th>Nombre</th><th>Clave</th><th>Especialidad</th><th>Registro</th><th>Estatus</th></tr>";
+      data.forEach(row => {
+        html += `<tr>
+          <td>${row[0]}</td>
+          <td>${row[1]}</td>
+          <td>${row[2]}</td>
+          <td>${row[3]}</td>
+          <td>${row[4]}</td>
+        </tr>`;
+      });
+      html += "</table>";
+      resultadosDiv.innerHTML = html;
+    })
+    .catch(err => {
+      resultadosDiv.innerHTML = "<p>Error al conectar con la base de datos.</p>";
+      console.error(err);
+    });
+}

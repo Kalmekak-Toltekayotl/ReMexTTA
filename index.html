@@ -8,52 +8,58 @@
 </head>
 
 <body>
-  <div class="fade-container">
-    <!-- Encabezado -->
-    <header class="header">
-      <div class="header-left">
-        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
-      </div>
-      <div class="header-center">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <nav id="menu">
-          <a href="index.html" class="active">Inicio</a>
-          <a href="quienes.html">Quiénes Somos</a>
-          <a href="consulta.html">Consulta</a>
-          <a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
-      <div class="header-right">
-        <a href="https://www.facebook.com/share/1BHEVw3dpf/" target="_blank" class="icono-red fb">f</a>
-        <a href="https://wa.me/527731538233" target="_blank" class="icono-red wa">💬</a>
-      </div>
+  <div class="container">
+    <header>
+      <h1>ReMexTTa</h1>
+      <h2>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h2>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes.html">Quiénes somos</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </header>
 
-    <!-- Inicio -->
-    <section id="inicio" class="seccion">
-      <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-      <p>
-        Bienvenido(a) al Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa). 
-        Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional y terapias complementarias.
-      </p>
-    </section>
-
-    <!-- Buscador -->
-    <section id="consulta" class="seccion">
-      <h2>Consulta de Terapeutas</h2>
-      <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre o clave...">
+    <main>
+      <section id="buscador">
+        <h3>Consulta tu registro</h3>
+        <p>Escribe tu <strong>nombre</strong> o <strong>clave</strong> para buscar en la base de datos.</p>
+        <input type="text" id="query" placeholder="Ejemplo: Rubí Ayala o KT-006">
         <button onclick="buscar()">Buscar</button>
-      </div>
-      <div id="resultados"></div>
-    </section>
+        <div id="resultados"></div>
+      </section>
+    </main>
 
-    <!-- Pie -->
     <footer>
-      <p>© 2025 KALMEKAK TOLTEKAYOTL | ReMexTTa</p>
+      <p>© 2025 ReMexTTa - Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</p>
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("open");
+  }
+
+  function buscar() {
+    const query = document.getElementById("query").value.trim();
+    const resultados = document.getElementById("resultados");
+
+    if (!query) {
+      resultados.innerHTML = "<p>Por favor, escribe un nombre o clave.</p>";
+      return;
+    }
+
+    resultados.innerHTML = "<p>Buscando resultados para: <b>" + query + "</b>...</p>";
+
+    // Simulación de búsqueda temporal
+    setTimeout(() => {
+      resultados.innerHTML = `<p>No se encontraron resultados para "<b>${query}</b>".</p>`;
+    }, 1200);
+  }
+  </script>
 </body>
 </html>

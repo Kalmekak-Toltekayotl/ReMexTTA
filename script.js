@@ -1,4 +1,3 @@
-// ⚙️ Pega aquí la URL de tu aplicación web de Google Apps Script
 const appScriptURL = "https://script.google.com/macros/s/AKfycbwKnXwl3CprZQRWvGbmYis0t7Gbc1doPj-eTg28EI8Y2eZC5DKqU3A1o8tAfq7MzXC2bA/exec";
 
 function buscar() {

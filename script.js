@@ -26,7 +26,7 @@ function buscar() {
   const resultadosDiv = document.getElementById("resultados");
   resultadosDiv.innerHTML = "<p>Buscando...</p>";
 
-  fetch("https://script.google.com/macros/s/TU_SCRIPT_ID/exec?q=" + encodeURIComponent(query))
+  fetch("https://script.google.com/macros/s/AKfycbxWir7swQbv4DVUrHYe64vma2c6XuwJ-9ALtj5McMgoaGwKsFD7PYkXuDk6Zu7iV_GXLQ/exec?q=" + encodeURIComponent(query))
     .then(res => res.json())
     .then(data => {
       if (!data || data.length === 0) {

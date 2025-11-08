@@ -32,7 +32,7 @@ function buscar() {
 
   resultadosDiv.innerHTML = "<p>Buscando...</p>";
 
-  fetch("https://script.google.com/macros/s/AKfycbx5-Xsz1yh8et1nyHDLao6EGNqNCxtX_9SzZrC-Nl16N-fosxj5hexkunFn_kmUBqI6Nw/exec?q=" + encodeURIComponent(query))
+  fetch("https://script.google.com/macros/s/AKfycbxRuVYWYS2u-KL3YAjGmzF3Gk_JJOef7D0Sq8VwjFH2cyUf7chfu7YuMqyXr1CMXRGLzw/exec?q=" + encodeURIComponent(query))
     .then(res => res.json())
     .then(data => {
       if (!data || data.length === 0) {

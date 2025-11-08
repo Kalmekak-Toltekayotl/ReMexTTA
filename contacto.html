@@ -6,6 +6,42 @@
   <title>Contacto | ReMexTTa</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    /* Estilo para formulario vertical */
+    .form-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    .form-contacto input,
+    .form-contacto textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-contacto button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .form-contacto button:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
   <div class="fade-container">
@@ -33,7 +69,7 @@
       <p><strong>Titular:</strong> REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS. Todos los derechos reservados.</p>
       <p class="unete">✨ DESEAS REGISTRARTE O REGISTRAR A TU MATRÍCULA, ÚNETE A NUESTRO EQUIPO, CONTÁCTANOS ✨</p>
 
-      <!-- Formulario de contacto -->
+      <!-- Formulario de contacto vertical -->
       <div class="form-contacto">
         <input type="text" id="nombre" placeholder="Tu nombre completo" required>
         <input type="text" id="telefono" placeholder="Tu número de teléfono" required>
@@ -65,8 +101,8 @@
 
       // Abrir WhatsApp en ventana oculta
       const win = window.open(url, '_blank');
-      if (win) win.blur(); // Ocultar foco de la ventana
-      window.focus(); // Volver el foco a la página
+      if (win) win.blur();
+      window.focus();
 
       // Confirmación
       alert("Mensaje enviado correctamente");

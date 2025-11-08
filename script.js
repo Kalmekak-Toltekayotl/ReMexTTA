@@ -1,33 +1,22 @@
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("open");
+}
+
 function buscar() {
   const query = document.getElementById("query").value.trim();
-  const resultadosDiv = document.getElementById("resultados");
+  const resultados = document.getElementById("resultados");
 
   if (query === "") {
-    resultadosDiv.innerHTML = "<p>Por favor, escribe un nombre o clave para buscar.</p>";
+    resultados.innerHTML = "<p>Por favor, escribe un nombre o clave.</p>";
     return;
   }
 
-  resultadosDiv.innerHTML = "<p>Buscando información, por favor espera...</p>";
+  resultados.innerHTML = "<p>Buscando resultados para: <b>" + query + "</b>...</p>";
 
-  // ⚠️ Sustituye este enlace cuando publiques tu Google Apps Script (Paso 3)
-  const url = "https://script.google.com/macros/s/AKfycbyZK-y4Iee_Lz0UW8x1BTfaz_w8j723keK5_4wo_hVjYsUMzJAWG4kBHm1jKCUnvxKwBQ/exec"; 
-
-  fetch(url + "?query=" + encodeURIComponent(query))
-    .then(response => response.json())
-    .then(data => {
-      if (data.length > 0) {
-        let html = "<table border='1'><tr><th>Nombre</th><th>Clave</th><th>Especialidad</th></tr>";
-        data.forEach(row => {
-          html += `<tr><td>${row.nombre}</td><td>${row.clave}</td><td>${row.especialidad}</td></tr>`;
-        });
-        html += "</table>";
-        resultadosDiv.innerHTML = html;
-      } else {
-        resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
-      }
-    })
-    .catch(error => {
-      resultadosDiv.innerHTML = "<p style='color:red;'>No se pudo conectar con el servidor.</p>";
-      console.error(error);
-    });
+  // Aquí luego pondremos la conexión a Google Apps Script
+  // Ejemplo temporal:
+  setTimeout(() => {
+    resultados.innerHTML = `<p>No se encontraron resultados para "<b>${query}</b>".</p>`;
+  }, 1000);
 }

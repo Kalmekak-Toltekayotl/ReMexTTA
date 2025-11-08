@@ -20,13 +20,13 @@ function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");
 }
 
-// Buscador conectado a tu Google App Script
+// 🔍 Buscador conectado con Google Apps Script
 function buscar() {
   const query = document.getElementById("query").value.trim();
   const resultadosDiv = document.getElementById("resultados");
 
   if (!query) {
-    resultadosDiv.innerHTML = "<p>Por favor escribe un nombre o clave.</p>";
+    resultadosDiv.innerHTML = "<p>Por favor, escribe un nombre o clave.</p>";
     return;
   }
 
@@ -43,15 +43,13 @@ function buscar() {
       resultadosDiv.innerHTML = data.map(item => `
         <div class="registro">
           <h3>${item.nombre}</h3>
-          <ul class="valores">
-            <li><strong>Especialidad:</strong> ${item.especialidad}</li>
-            <li><strong>Clave:</strong> ${item.clave}</li>
-          </ul>
+          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
+          <p><strong>Clave:</strong> ${item.clave}</p>
         </div>
       `).join('');
     })
     .catch(err => {
       console.error(err);
-      resultadosDiv.innerHTML = "<p>Error al conectar con el servidor. Intenta de nuevo más tarde.</p>";
+      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta más tarde.</p>";
     });
 }

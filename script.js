@@ -20,13 +20,19 @@ function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");
 }
 
-// Buscador con App Script
+// Buscador conectado a tu Google App Script
 function buscar() {
   const query = document.getElementById("query").value.trim();
   const resultadosDiv = document.getElementById("resultados");
+
+  if (!query) {
+    resultadosDiv.innerHTML = "<p>Por favor escribe un nombre o clave.</p>";
+    return;
+  }
+
   resultadosDiv.innerHTML = "<p>Buscando...</p>";
 
-  fetch("https://script.google.com/macros/s/TU_ID_/exec?q=" + encodeURIComponent(query))
+  fetch("https://script.google.com/macros/s/AKfycbyWl8RDKlrw_YXsuYAUWgsQN5YR1xbd4paIbpH33L1EF5fW46nC4Uel916WYsJkeNqljg/exec?q=" + encodeURIComponent(query))
     .then(res => res.json())
     .then(data => {
       if (!data || data.length === 0) {
@@ -37,13 +43,15 @@ function buscar() {
       resultadosDiv.innerHTML = data.map(item => `
         <div class="registro">
           <h3>${item.nombre}</h3>
-          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
-          <p><strong>Clave:</strong> ${item.clave}</p>
+          <ul class="valores">
+            <li><strong>Especialidad:</strong> ${item.especialidad}</li>
+            <li><strong>Clave:</strong> ${item.clave}</li>
+          </ul>
         </div>
       `).join('');
     })
     .catch(err => {
       console.error(err);
-      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta de nuevo.</p>";
+      resultadosDiv.innerHTML = "<p>Error al conectar con el servidor. Intenta de nuevo más tarde.</p>";
     });
 }

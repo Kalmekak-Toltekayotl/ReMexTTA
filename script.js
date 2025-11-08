@@ -10,7 +10,7 @@ function buscar() {
   resultadosDiv.innerHTML = "<p>Buscando información, por favor espera...</p>";
 
   // ⚠️ Sustituye este enlace cuando publiques tu Google Apps Script (Paso 3)
-  const url = "TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI"; 
+  const url = "https://script.google.com/macros/s/AKfycbyZK-y4Iee_Lz0UW8x1BTfaz_w8j723keK5_4wo_hVjYsUMzJAWG4kBHm1jKCUnvxKwBQ/exec"; 
 
   fetch(url + "?query=" + encodeURIComponent(query))
     .then(response => response.json())

@@ -166,3 +166,42 @@ footer {
   nav.show { display: flex; }
   .menu-icon { display: block; }
 }
+
+/* ============================
+   AJUSTE PARA CENTRAR EL MENÚ
+   ============================ */
+.header {
+  justify-content: center; /* centra todo el contenido del header */
+}
+
+.header-left {
+  margin-right: 20px; /* espacio entre logo y menú */
+}
+
+.header-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* centra el bloque del menú dentro del header */
+}
+
+#menu {
+  display: flex;
+  justify-content: center; /* centra los enlaces */
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ============================
+   AJUSTE RESPONSIVO DEL LOGO
+   ============================ */
+@media (max-width: 768px) {
+  .logo {
+    height: 100px; /* se reduce suavemente en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 80px; /* más pequeño para celulares muy estrechos */
+  }
+}

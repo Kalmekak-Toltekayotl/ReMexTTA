@@ -153,7 +153,7 @@ footer {
 /* RESPONSIVO */
 @media (max-width: 768px) {
   nav {
-    display: none;
+    display: none; /* 🔹 Esto asegura que el menú esté oculto por defecto */
     flex-direction: column;
     background-color: #e5e5e5;
     padding: 15px;
@@ -162,9 +162,16 @@ footer {
     top: 70px;
     border: 1px solid #999;
     border-radius: 8px;
+    z-index: 10;
   }
-  nav.show { display: flex; }
-  .menu-icon { display: block; }
+
+  nav.show { 
+    display: flex; /* 🔹 Solo se muestra cuando se activa con toggleMenu() */
+  }
+
+  .menu-icon { 
+    display: block; 
+  }
 }
 
 /* ============================
@@ -188,7 +195,11 @@ footer {
   display: flex;
   justify-content: center; /* centra los enlaces */
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px; /* 🔹 un poco menos de espacio para evitar encimado */
+}
+
+#menu a {
+  font-size: 0.95rem; /* 🔹 reduce ligeramente el tamaño del texto del menú */
 }
 
 /* ============================

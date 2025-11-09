@@ -3,252 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto | ReMexTTa</title>
-  <link rel="stylesheet" href="style.css" />
-
+  <title>Contacto | ReMexTTA</title>
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
+      font-family: "Segoe UI", sans-serif;
       margin: 0;
-      background-color: #f2f2f2; /* Fondo gris */
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
       color: #333;
     }
-
-    .fade-container {
-      animation: fadeIn 0.6s ease-in;
+    header {
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
     }
-
-    /* Encabezado */
-    .header {
-      background-color: #222;
-      color: white;
+    nav {
+      background-color: #333;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+      justify-content: center;
       flex-wrap: wrap;
     }
-
-    .header .logo {
-      height: 50px;
-    }
-
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
+      padding: 10px 20px;
+      display: block;
     }
-
-    nav a.active {
-      text-decoration: underline;
+    nav a:hover {
+      background-color: #555;
     }
-
-    .menu-icon {
-      display: none;
-      cursor: pointer;
-    }
-
-    .header-right .icono-red {
-      margin-left: 10px;
-      color: white;
-      font-size: 1.4rem;
-      text-decoration: none;
-    }
-
-    /* Sección de contacto */
-    .seccion {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .seccion h2 {
-      margin-bottom: 10px;
-    }
-
-    .form-contacto {
+    main {
+      max-width: 600px;
+      margin: 40px auto;
       background-color: white;
-      max-width: 500px;
-      margin: 30px auto;
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      text-align: left;
+      gap: 12px;
     }
-
-    .form-contacto input,
-    .form-contacto textarea {
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
       padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      border: 1px solid #aaa;
-      font-size: 1rem;
-      width: 100%;
-      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 1em;
     }
-
-    .form-contacto button {
-      background-color: #222;
-      color: #fff;
+    button {
+      background-color: #444;
+      color: white;
+      padding: 10px;
       border: none;
       border-radius: 5px;
-      padding: 10px;
+      font-size: 1em;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: 0.3s;
     }
-
-    .form-contacto button:hover {
-      background-color: #444;
+    button:hover {
+      background-color: #666;
     }
-
-    /* Mensaje visual */
-    .mensaje-estado {
-      display: none;
-      text-align: center;
+    #mensaje-exito {
+      color: green;
       font-weight: bold;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      transition: opacity 0.5s ease;
-    }
-
-    .mensaje-exito {
-      display: block;
-      background-color: #c8f7c5;
-      color: #2e7d32;
-    }
-
-    .mensaje-error {
-      display: block;
-      background-color: #f8d7da;
-      color: #721c24;
-    }
-
-    /* Pie de página */
-    footer {
-      background-color: #222;
-      color: #fff;
       text-align: center;
-      padding: 10px;
-      margin-top: 30px;
-      font-size: 0.9rem;
+      display: none;
+      margin-top: 15px;
     }
-
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-      nav.active {
-        display: flex;
-      }
+    #mensaje-error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+      margin-top: 15px;
     }
   </style>
 </head>
-
 <body>
-  <div class="fade-container">
-    <!-- ENCABEZADO -->
-    <header class="header">
-      <div class="header-left">
-        <img src="logo.png" alt="Logo ReMexTTa" class="logo" />
-      </div>
-      <div class="header-center">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <nav id="menu">
-          <a href="index.html">Inicio</a>
-          <a href="quienes.html">Quiénes Somos</a>
-          <a href="consulta.html">Consulta</a>
-          <a href="contacto.html" class="active">Contacto</a>
-        </nav>
-      </div>
-      <div class="header-right">
-        <a href="https://www.facebook.com/profile.php?id=61566544212654" target="_blank" class="icono-red">f</a>
-      </div>
-    </header>
+  <header>
+    <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
+  </header>
 
-    <!-- SECCIÓN DE CONTACTO -->
-    <section class="seccion" id="contacto">
-      <h2>Contacto</h2>
-      <p><strong>Titular:</strong> REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS</p>
-      <p class="unete">✨ DESEAS REGISTRARTE O REGISTRAR TU MATRÍCULA, ÚNETE A NUESTRO EQUIPO, CONTÁCTANOS ✨</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quienes.html">Quiénes Somos</a>
+    <a href="registro.html">Registro</a>
+    <a href="consulta.html">Consulta</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
 
-      <!-- FORMULARIO -->
-      <form class="form-contacto">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-        <input type="text" name="telefono" placeholder="Tu número de teléfono" required>
-        <textarea name="mensaje" placeholder="Escribe tu mensaje o pregunta" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+  <main>
+    <h2>Contáctanos</h2>
+    <form id="formContacto">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-      <div id="mensaje-estado" class="mensaje-estado"></div>
-    </section>
+      <label for="telefono">Teléfono o WhatsApp</label>
+      <input type="text" id="telefono" name="telefono" required />
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
-    </footer>
-  </div>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-  <!-- SCRIPT -->
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <p id="mensaje-exito">✅ ¡Mensaje enviado con éxito!</p>
+    <p id="mensaje-error">❌ Ocurrió un error al enviar el mensaje. Intenta nuevamente.</p>
+  </main>
+
   <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
-    }
-
-    const form = document.querySelector(".form-contacto");
-    const mensajeEstado = document.getElementById("mensaje-estado");
-
-    // ⚠️ Reemplaza esta URL con tu enlace del Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwxPso22sz4BDxclxg7Oy0mbCfvAgOsGiEGd9Tm2-IdACqBMAQrDjMrwEafowi01i2syg/exec";
-
-    form.addEventListener("submit", async (e) => {
+    document.getElementById("formContacto").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(form);
-      mensajeEstado.style.display = "none";
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
 
       try {
-        const response = await fetch(scriptURL, { method: "POST", body: formData });
-        const text = await response.text();
+        const respuesta = await fetch("AQUÍ_PEGA_LA_URL_DEL_SCRIPT", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, telefono, mensaje })
+        });
+        const data = await respuesta.json();
 
-        if (text.includes("OK")) {
-          mostrarMensaje("✅ Tu mensaje ha sido enviado correctamente.", true);
-          form.reset();
+        if (data.ok) {
+          document.getElementById("mensaje-exito").style.display = "block";
+          document.getElementById("mensaje-error").style.display = "none";
+          e.target.reset();
         } else {
-          mostrarMensaje("❌ Error al enviar el mensaje. Intenta más tarde.", false);
+          document.getElementById("mensaje-error").style.display = "block";
+          document.getElementById("mensaje-exito").style.display = "none";
         }
-      } catch (error) {
-        mostrarMensaje("❌ No se pudo conectar con el servidor. Intenta más tarde.", false);
+      } catch {
+        document.getElementById("mensaje-error").style.display = "block";
+        document.getElementById("mensaje-exito").style.display = "none";
       }
     });
-
-    function mostrarMensaje(texto, exito) {
-      mensajeEstado.textContent = texto;
-      mensajeEstado.className = exito
-        ? "mensaje-estado mensaje-exito"
-        : "mensaje-estado mensaje-error";
-      mensajeEstado.style.opacity = "1";
-      mensajeEstado.style.display = "block";
-
-      // Se oculta automáticamente a los 5 segundos
-      setTimeout(() => {
-        mensajeEstado.style.opacity = "0";
-        setTimeout(() => (mensajeEstado.style.display = "none"), 500);
-      }, 5000);
-    }
   </script>
 </body>
 </html>

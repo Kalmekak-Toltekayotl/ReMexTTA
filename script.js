@@ -1,7 +1,12 @@
-// Efecto fade entre páginas
+// 🌟 Efecto fade entre páginas
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
+  // Asegurar que el menú esté oculto al iniciar
+  const menu = document.getElementById("menu");
+  if (menu) menu.classList.remove("show");
+
+  // Transición suave entre páginas
   document.querySelectorAll("a[href]").forEach(link => {
     if (link.getAttribute("target") === "_blank") return;
     link.addEventListener("click", e => {
@@ -13,11 +18,23 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Cerrar el menú al hacer clic en un enlace (solo en modo móvil)
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        const menu = document.getElementById("menu");
+        if (menu) menu.classList.remove("show");
+      }
+    });
+  });
 });
 
-// Menú responsive
+// 📱 Menú responsive (abrir/cerrar)
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("show");
+  const menu = document.getElementById("menu");
+  if (menu) menu.classList.toggle("show");
 }
 
 // 🔍 Buscador conectado con Google Apps Script

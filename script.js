@@ -1,72 +1,237 @@
-// 🌟 Efecto fade entre páginas
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("loaded");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-  // Asegurar que el menú esté oculto al iniciar
-  const menu = document.getElementById("menu");
-  if (menu) menu.classList.remove("show");
-
-  // Transición suave entre páginas
-  document.querySelectorAll("a[href]").forEach(link => {
-    if (link.getAttribute("target") === "_blank") return;
-    link.addEventListener("click", e => {
-      const href = link.getAttribute("href");
-      if (href && !href.startsWith("#")) {
-        e.preventDefault();
-        document.body.classList.remove("loaded");
-        setTimeout(() => window.location.href = href, 2000);
-      }
-    });
-  });
-
-  // Cerrar el menú al hacer clic en un enlace (solo en modo móvil)
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      }
-    });
-  });
-});
-
-// 📱 Menú responsive (abrir/cerrar)
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  if (menu) menu.classList.toggle("show");
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
 }
 
-// 🔍 Buscador conectado con Google Apps Script
-function buscar() {
-  const query = document.getElementById("query").value.trim();
-  const resultadosDiv = document.getElementById("resultados");
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e5e5e5;
+  color: #222;
+}
 
-  if (!query) {
-    resultadosDiv.innerHTML = "<p>Por favor, escribe un nombre o clave.</p>";
-    return;
+/* Transición Fade */
+.fade-container {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+body.loaded .fade-container {
+  opacity: 1;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dcdcdc;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #999;
+  z-index: 1000;
+}
+
+.logo {
+  height: 140px;
+}
+
+/* Menú centrado */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #000;
+  border-bottom: 2px solid #666;
+}
+
+/* 🔥 SECCIÓN INICIO CON FONDO Y VELO OSCURO */
+#inicio {
+  position: relative;
+  background: url("fondo%20inicio.png") no-repeat center center/cover;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  padding: 100px 20px;
+  border-bottom: 2px solid #ccc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Velo semitransparente encima del fondo */
+#inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* oscurece ligeramente el fondo */
+  z-index: 1;
+}
+
+/* Texto encima del velo */
+#inicio h1,
+#inicio p {
+  position: relative;
+  z-index: 2;
+}
+
+#inicio h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#inicio p {
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #111;
+  margin-bottom: 15px;
+}
+
+/* BUSCADOR */
+.buscador {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buscador input {
+  padding: 10px;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.buscador button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.buscador button:hover {
+  background-color: #555;
+}
+
+/* RESULTADOS */
+#resultados {
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+}
+
+.registro {
+  background-color: #f7f7f7;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+}
+
+/* LISTA DE VALORES */
+.valores {
+  list-style: none;
+  margin-top: 10px;
+}
+.valores li {
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #dcdcdc;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-top: 2px solid #999;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .menu-icon { display: block; }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #e5e5e5;
+    padding: 15px;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    border: 1px solid #999;
+    border-radius: 8px;
   }
 
-  resultadosDiv.innerHTML = "<p>Buscando...</p>";
+  nav.show {
+    display: flex;
+  }
 
-  fetch("https://script.google.com/macros/s/AKfycbxRuVYWYS2u-KL3YAjGmzF3Gk_JJOef7D0Sq8VwjFH2cyUf7chfu7YuMqyXr1CMXRGLzw/exec?q=" + encodeURIComponent(query))
-    .then(res => res.json())
-    .then(data => {
-      if (!data || data.length === 0) {
-        resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
-        return;
-      }
+  #inicio {
+    min-height: 90vh;
+    padding: 60px 15px;
+  }
 
-      resultadosDiv.innerHTML = data.map(item => `
-        <div class="registro">
-          <h3>${item.nombre}</h3>
-          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
-          <p><strong>Clave:</strong> ${item.clave}</p>
-        </div>
-      `).join('');
-    })
-    .catch(err => {
-      console.error(err);
-      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta más tarde.</p>";
-    });
+  #inicio h1 {
+    font-size: 1.6rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
+  }
+}
+
+/* 🔒 PARCHE: Asegurar menú cerrado al cargar en móvil */
+@media (max-width: 768px) {
+  nav {
+    display: none !important;
+  }
+  nav.show {
+    display: flex !important;
+  }
 }

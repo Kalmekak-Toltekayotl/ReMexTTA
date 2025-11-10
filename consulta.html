@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReMexTTa | Consulta de Terapeutas</title>
+  <title>ReMexTTa | Terapeutas Certificados</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -14,22 +14,26 @@
       <div class="header-left">
         <img src="logo.png" alt="Logo ReMexTTa" class="logo">
       </div>
+
       <div class="header-center">
         <nav id="menu">
           <a href="index.html">Inicio</a>
           <a href="quienes.html">Quiénes Somos</a>
-          <a href="consulta.html" class="active">Consulta</a>
+          <a href="consulta.html" class="active">Terapeutas Certificados</a>
+          <a href="asociados.html">Asociados Académicos</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html">Requisitos Académicos</a>
           <a href="contacto.html">Contacto</a>
         </nav>
       </div>
-      <div class="header-right">
-        <a href="https://www.facebook.com/profile.php?id=61566544212654" target="_blank" class="icono-red fb">f</a>
-      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
 
     <!-- Sección de consulta -->
     <section id="consulta" class="seccion">
-      <h2>Consulta de Terapeutas</h2>
+      <h2>Terapeutas Certificados</h2>
       <div class="buscador">
         <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
         <button onclick="buscar()">Buscar</button>

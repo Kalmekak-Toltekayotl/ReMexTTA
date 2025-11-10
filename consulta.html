@@ -3,92 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReMexTTa | Terapeutas Certificados</title>
+  <title>ReMexTTa | Consulta de Terapeutas</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <style>
-    /* === BOTÓN HAMBURGUESA === */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
+    /* --- Mantiene tu estilo original y solo ajusta el botón hamburguesa --- */
+
+    .menu-icon {
+      font-size: 2rem;              /* mismo tamaño que el resto de páginas */
       cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background 0.3s;
-      margin-right: 20px;
-    }
-
-    .menu-toggle:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-
-    /* === ESTILO DEL HEADER EN ESCRITORIO === */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 20px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      height: 65px;
-      width: auto;
-    }
-
-    #menu {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-    }
-
-    #menu a {
-      text-decoration: none;
+      display: none;
+      position: relative;
+      right: 10px;                 /* centrado más visualmente */
       color: #333;
-      font-weight: 600;
-      font-size: 0.95rem; /* más pequeño para evitar encimarse */
-      padding: 8px 10px;
-      transition: color 0.3s, background 0.3s;
-      border-radius: 6px;
     }
 
-    #menu a:hover,
-    #menu a.active {
-      background: #f0f0f0;
-      color: #000;
-    }
-
-    /* === VERSIÓN MÓVIL === */
     @media (max-width: 768px) {
-      .menu-toggle {
+      .menu-icon {
         display: block;
-        position: relative;
-        right: 5px;
-        font-size: 2rem;
+        margin-right: 15px;
       }
 
-      #menu {
+      nav {
         display: none;
         flex-direction: column;
-        background: #fff;
+        background-color: #e5e5e5;
+        padding: 15px;
         position: absolute;
-        top: 75px;
-        right: 10px;
-        width: 85%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        border-radius: 10px;
-        padding: 15px 0;
+        right: 20px;
+        top: 85px;                /* bajamos un poco para mejor alineación */
+        border: 1px solid #999;
+        border-radius: 8px;
         z-index: 100;
       }
 
-      #menu.show {
+      nav.show {
         display: flex;
       }
 
-      #menu a {
-        padding: 12px 20px;
-        text-align: center;
+      nav a {
+        padding: 10px 0;
         font-size: 1.1rem;
       }
     }
@@ -102,8 +56,32 @@
         <img src="logo.png" alt="Logo ReMexTTa" class="logo">
       </div>
 
+      <!-- Botón hamburguesa -->
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
       <div class="header-center">
         <nav id="menu">
           <a href="index.html">Inicio</a>
           <a href="quienes.html">Quiénes Somos</a>
-          <a href="consulta.html" class="active">Terapeutas Certificados</a>
+          <a href="consulta.html" class="active">Consulta</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sección de consulta -->
+    <section id="consulta" class="seccion">
+      <h2>Consulta de Terapeutas</h2>
+      <div class="buscador">
+        <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+        <button onclick="buscar()">Buscar</button>
+      </div>
+      <div id="resultados"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
+    </footer>
+  </div>
+</body>
+</html>

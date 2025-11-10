@@ -152,6 +152,7 @@ footer {
   .menu-icon {
     display: block;
   }
+
   nav {
     display: none;
     flex-direction: column;
@@ -162,18 +163,10 @@ footer {
     top: 70px;
     border: 1px solid #999;
     border-radius: 8px;
+    z-index: 1000;
   }
+
   nav.show {
     display: flex;
-  }
-}
-
-/* 🔒 PARCHE: Asegurar menú cerrado al cargar en móvil */
-@media (max-width: 768px) {
-  nav {
-    display: none !important;
-  }
-  nav.show {
-    display: flex !important;
   }
 }

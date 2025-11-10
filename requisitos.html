@@ -1,239 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requisitos | Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</title>
-    <link rel="stylesheet" href="estilos.css">
-    <style>
-        /* --- AJUSTES GENERALES --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requisitos Académicos | ReMexTTa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    /* --- Ajuste fino: igual al de quienes.html --- */
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      position: relative;
+      right: -20px;
+      color: #333;
+    }
 
-        header {
-            background-color: #004d40;
-            color: white;
-            padding: 10px 0;
-            position: relative;
-            text-align: center;
-        }
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+        margin-right: 15px;
+      }
 
-        header img {
-            width: 70px;
-            position: absolute;
-            top: 8px;
-            left: 20px;
-        }
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #e5e5e5;
+        padding: 15px;
+        position: absolute;
+        right: 20px;
+        top: 85px;
+        border: 1px solid #999;
+        border-radius: 8px;
+        z-index: 100;
+      }
 
-        header h1 {
-            font-size: 1.2rem;
-            margin: 0;
-        }
+      nav.show {
+        display: flex;
+      }
 
-        /* --- MENÚ SUPERIOR --- */
-        nav {
-            background-color: #00695c;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+      nav a {
+        padding: 10px 0;
+        font-size: 1.1rem;
+      }
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-            font-weight: 500;
-        }
+    /* --- Ajustes visuales del contenido --- */
+    .seccion {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
 
-        nav a:hover {
-            background-color: #004d40;
-        }
+    h1, h2 {
+      color: #004d40;
+      border-bottom: 2px solid #00695c;
+      padding-bottom: 5px;
+    }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            right: 20px;
-            top: 18px;
-            cursor: pointer;
-        }
+    p, li {
+      line-height: 1.6;
+      text-align: justify;
+    }
 
-        .bar {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 4px 0;
-            border-radius: 2px;
-        }
+    ul {
+      margin-left: 20px;
+    }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-            }
+    .boton-contacto {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #004d40;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
 
-            nav.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            header img {
-                left: 10px;
-                top: 10px;
-                width: 60px;
-            }
-
-            header h1 {
-                font-size: 1rem;
-                margin-left: 80px;
-            }
-        }
-
-        /* --- CONTENIDO PRINCIPAL --- */
-        main {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #00695c;
-            border-bottom: 2px solid #004d40;
-            padding-bottom: 5px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        p {
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* --- BOTÓN CONTACTO --- */
-        .boton-contacto {
-            display: inline-block;
-            background-color: #004d40;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .boton-contacto:hover {
-            background-color: #00796b;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #004d40;
-            color: white;
-            text-align: center;
-            padding: 15px 10px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-
-    </style>
+    .boton-contacto:hover {
+      background-color: #00796b;
+    }
+  </style>
 </head>
 <body>
+  <div class="fade-container">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
 
-    <header>
-        <img src="logo.png" alt="Logo ReMexTTa">
-        <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-        <div class="menu-toggle" id="menu-toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <nav id="nav">
-            <a href="index.html">Inicio</a>
-            <a href="beneficios.html">Beneficios</a>
-            <a href="requisitos.html">Requisitos</a>
-            <a href="asociados.html">Asociados</a>
-            <a href="registro.html">Registro</a>
-            <a href="contacto.html">Contacto</a>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+      <div class="header-center">
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html">Terapeutas Certificados</a>
+          <a href="asociados.html">Asociados Académicos</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html" class="active">Requisitos Académicos</a>
+          <a href="contacto.html">Contacto</a>
         </nav>
+      </div>
     </header>
 
-    <main>
-        <section>
-            <h2>1. Incorporación Automática de Estudiantes</h2>
-            <p>
-                Todos los estudiantes que hayan cursado programas o talleres con alguno de nuestros <strong>Asociados Académicos</strong> 
-                y dentro de los cursos oficialmente dados de alta ante el Registro Público Mexicano de Terapeutas Tradicionales y Alternativos, 
-                serán incorporados <strong>de manera automática</strong> al registro. Esta medida garantiza la autenticidad y validez de la formación recibida, 
-                respaldada por las instituciones y docentes asociados a este organismo.
-            </p>
-            <!-- Imagen sugerida aquí -->
-        </section>
+    <section class="seccion">
+      <h1>Requisitos Académicos</h1>
 
-        <section>
-            <h2>2. Registro por Experiencia o Estudios Independientes</h2>
-            <p>
-                Aquellas personas interesadas en formar parte del registro que cuenten con estudios independientes o formación obtenida fuera de nuestros programas, 
-                pueden incorporarse cumpliendo los siguientes requisitos:
-            </p>
-            <ul>
-                <li>Ser mayor de 15 años.</li>
-                <li>Presentar documentos que demuestren haber cursado los temas del área que desea registrar.</li>
-                <li>Acreditar una evaluación teórico-práctica con calificación mínima de <strong>8.0</strong>.</li>
-                <li>Entregar una <strong>tesina de mínimo 50 cuartillas</strong>, elaborada bajo los lineamientos del <em>Estilo APA 7ª edición</em>.</li>
-                <li>En caso de ser autodidacta (en caso de no tener documentos que demustren el estudio de los temas a registrar), presentar además una <strong>evaluación oral</strong> mediante exposición y defensa de su tesina.</li>
-            </ul>
-            <p>
-                Este proceso busca garantizar que cada terapeuta registrado posea el nivel técnico, ético y formativo necesario 
-                para ofrecer servicios de calidad a la sociedad mexicana, en apego a las <strong>Normas Oficiales Mexicanas</strong>, 
-                las disposiciones de la <strong>Secretaría del Trabajo y Previsión Social</strong>, y el <strong>respaldo de la SEP Federal</strong>.
-            </p>
-            <!-- Imagen sugerida aquí -->
-        </section>
+      <h2>1. Incorporación Automática de Estudiantes</h2>
+      <p>
+        Todos los estudiantes que hayan cursado programas o talleres con alguno de nuestros <strong>Asociados Académicos</strong> 
+        y dentro de los cursos oficialmente dados de alta ante el Registro Público Mexicano de Terapeutas Tradicionales y Alternativos, 
+        serán incorporados <strong>de manera automática</strong> al registro. Esta medida garantiza la autenticidad y validez de la formación recibida, 
+        respaldada por las instituciones y docentes asociados a este organismo.
+      </p>
+      <!-- Imagen sugerida aquí -->
 
-        <section>
-            <h2>3. Ser Asociado Académico</h2>
-            <p>
-                Sé parte de nuestro cuerpo académico y ofrece a tus alumnas y alumnos documentos oficiales y un registro de calidad 
-                que respalde su formación. Como <strong>Asociado Académico</strong> podrás incorporar tus programas, talleres y cursos, 
-                obteniendo reconocimiento institucional para tus egresados.
-            </p>
-            <p>
-                Pregunta por las áreas de conocimiento que puedes certificar con nosotros y únete a una red nacional de terapeutas 
-                comprometidos con la educación, la calidad y la ética profesional.
-            </p>
-            <a href="contacto.html" class="boton-contacto">Contáctanos</a>
-            <!-- Imagen sugerida aquí -->
-        </section>
-    </main>
+      <h2>2. Registro por Experiencia o Estudios Independientes</h2>
+      <p>
+        Aquellas personas interesadas en formar parte del registro que cuenten con estudios independientes o formación obtenida fuera de nuestros programas, 
+        pueden incorporarse cumpliendo los siguientes requisitos:
+      </p>
+      <ul>
+        <li>Ser mayor de 15 años.</li>
+        <li>Presentar documentos que demuestren haber cursado los temas del área que desea registrar.</li>
+        <li>Acreditar una evaluación teórico-práctica con calificación mínima de <strong>8.0</strong>.</li>
+        <li>Entregar una <strong>tesina de mínimo 50 cuartillas</strong>, elaborada bajo los lineamientos del <em>Estilo APA 7ª edición</em>.</li>
+        <li>En caso de ser autodidacta (en caso de no tener documentos que acrediten el conocimiento en el o los temas a registrar), presentar además una <strong>evaluación oral</strong> mediante exposición y defensa de su tesina.</li>
+      </ul>
+      <p>
+        Este proceso busca garantizar que cada terapeuta registrado posea el nivel técnico, ético y formativo necesario 
+        para ofrecer servicios de calidad a la sociedad mexicana, en apego a las <strong>Normas Oficiales Mexicanas</strong>, 
+        las disposiciones de la <strong>Secretaría del Trabajo y Previsión Social</strong>, y el <strong>respaldo de la SEP Federal</strong>.
+      </p>
+      <!-- Imagen sugerida aquí -->
+
+      <h2>3. Ser Asociado Académico</h2>
+      <p>
+        Sé parte de nuestro cuerpo académico y ofrece a tus alumnas y alumnos documentos oficiales y un registro de calidad 
+        que respalde su formación. Como <strong>Asociado Académico</strong> podrás incorporar tus programas, talleres y cursos, 
+        obteniendo reconocimiento institucional para tus egresados.
+      </p>
+      <p>
+        Pregunta por las áreas de conocimiento que puedes certificar con nosotros y únete a una red nacional de terapeutas 
+        comprometidos con la educación, la calidad y la ética profesional.
+      </p>
+
+      <a href="contacto.html" class="boton-contacto">Contáctanos</a>
+      <!-- Imagen sugerida aquí -->
+    </section>
 
     <footer>
-        © 2025 Registro Público Mexicano de Terapeutas Tradicionales y Alternativos. Todos los derechos reservados.
+      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const nav = document.getElementById("nav");
-
-        menuToggle.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        });
-    </script>
-
+  </div>
 </body>
 </html>

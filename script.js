@@ -1,41 +1,55 @@
-const DESTINO = "kalmekaktoltekayotl@gmail.com"; // ← correo al que se enviarán los mensajes
+// Efecto fade entre páginas
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
 
-function doPost(e) {
-  try {
-    // Leer datos del formulario (FormData)
-    const datos = e.parameter;
-    const nombre = (datos.nombre || "").trim();
-    const telefono = (datos.telefono || "").trim();
-    const mensaje = (datos.mensaje || "").trim();
-
-    // Validar que haya datos
-    if (!nombre || !telefono || !mensaje) {
-      return ContentService
-        .createTextOutput("ERROR: faltan campos")
-        .setMimeType(ContentService.MimeType.TEXT);
-    }
-
-    // Crear correo
-    const subject = `📩 Nuevo mensaje de ${nombre}`;
-    const body = `Has recibido un nuevo mensaje desde el formulario de contacto:\n\n` +
-                 `👤 Nombre: ${nombre}\n📞 Teléfono: ${telefono}\n\n📝 Mensaje:\n${mensaje}\n\n` +
-                 `----------------------------------\nSitio web: remextta.com`;
-
-    // Enviar correo
-    MailApp.sendEmail({
-      to: DESTINO,
-      subject: subject,
-      body: body,
+  document.querySelectorAll("a[href]").forEach(link => {
+    if (link.getAttribute("target") === "_blank") return;
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.remove("loaded");
+        setTimeout(() => window.location.href = href, 2000);
+      }
     });
+  });
+});
 
-    // Responder al navegador
-    return ContentService
-      .createTextOutput("OK")
-      .setMimeType(ContentService.MimeType.TEXT);
+// Menú responsive
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
 
-  } catch (error) {
-    return ContentService
-      .createTextOutput("ERROR: " + error)
-      .setMimeType(ContentService.MimeType.TEXT);
+// 🔍 Buscador conectado con Google Apps Script
+function buscar() {
+  const query = document.getElementById("query").value.trim();
+  const resultadosDiv = document.getElementById("resultados");
+
+  if (!query) {
+    resultadosDiv.innerHTML = "<p>Por favor, escribe un nombre o clave.</p>";
+    return;
   }
+
+  resultadosDiv.innerHTML = "<p>Buscando...</p>";
+
+  fetch("https://script.google.com/macros/s/AKfycbxRuVYWYS2u-KL3YAjGmzF3Gk_JJOef7D0Sq8VwjFH2cyUf7chfu7YuMqyXr1CMXRGLzw/exec?q=" + encodeURIComponent(query))
+    .then(res => res.json())
+    .then(data => {
+      if (!data || data.length === 0) {
+        resultadosDiv.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
+
+      resultadosDiv.innerHTML = data.map(item => `
+        <div class="registro">
+          <h3>${item.nombre}</h3>
+          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
+          <p><strong>Clave:</strong> ${item.clave}</p>
+        </div>
+      `).join('');
+    })
+    .catch(err => {
+      console.error(err);
+      resultadosDiv.innerHTML = "<p>Error al buscar. Intenta más tarde.</p>";
+    });
 }

@@ -51,12 +51,12 @@ body.loaded .fade-container {
   display: none;
 }
 
+/* 🔧 Menú con menor espaciado para que no se encime con el logo */
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* 🔧 antes era 15px — un poco más compacto */
-  margin-left: 40px; /* 🔧 separa el menú del logo */
+  gap: 10px; /* antes 15px */
 }
 
 nav a {
@@ -64,19 +64,12 @@ nav a {
   color: #333;
   font-weight: 600;
   transition: 0.3s;
-  font-size: 0.95rem; /* 🔧 ligeramente más pequeño */
 }
 
 nav a:hover,
 nav a.active {
   color: #000;
   border-bottom: 2px solid #666;
-}
-
-/* SECCIONES */
-.seccion {
-  padding: 50px 20px;
-  text-align: center;
 }
 
 /* 🔥 Fondo para la sección de inicio */
@@ -86,6 +79,11 @@ nav a.active {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
   padding: 100px 20px;
   border-bottom: 2px solid #ccc;
+  min-height: 100vh; /* asegura que el fondo se vea completo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #inicio h1 {
@@ -99,6 +97,12 @@ nav a.active {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 50px 20px;
+  text-align: center;
 }
 
 h1, h2 {
@@ -191,11 +195,17 @@ footer {
     display: flex;
   }
 
-  /* Ajuste del fondo en móvil */
   #inicio {
-    background-position: center;
-    background-size: cover;
-    padding: 80px 20px;
+    min-height: 90vh; /* fondo más compacto en móvil */
+    padding: 60px 15px;
+  }
+
+  #inicio h1 {
+    font-size: 1.6rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
   }
 }
 

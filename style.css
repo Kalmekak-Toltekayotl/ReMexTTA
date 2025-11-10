@@ -24,7 +24,7 @@ body.loaded .fade-container {
 /* BARRA BORGOÑA SUPERIOR */
 .top-bar {
   background-color: #800020; /* color borgoña */
-  height: 6px;
+  height: 30px;
   width: 100%;
   position: sticky;
   top: 0;

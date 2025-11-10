@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #e5e5e5;
+  background: url("fondo inicio.png") no-repeat center center fixed;
+  background-size: cover;
   color: #222;
 }
 
@@ -26,18 +27,19 @@ body.loaded .fade-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dcdcdc;
-  padding: 10px 20px;
+  background-color: rgba(220, 220, 220, 0.9);
+  padding: 10px 30px;
   position: sticky;
   top: 0;
   border-bottom: 2px solid #999;
+  backdrop-filter: blur(5px);
 }
 
 .logo {
   height: 140px;
 }
 
-/* Menú centrado */
+/* Menú centrado pero más alejado del logo */
 .header-center {
   flex: 1;
   display: flex;
@@ -55,8 +57,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* 🔧 antes era 15px — un poco más compacto */
-  margin-left: 40px; /* 🔧 separa el menú del logo */
+  gap: 10px; /* Menor espacio entre enlaces */
 }
 
 nav a {
@@ -64,7 +65,7 @@ nav a {
   color: #333;
   font-weight: 600;
   transition: 0.3s;
-  font-size: 0.95rem; /* 🔧 ligeramente más pequeño */
+  font-size: 0.95rem; /* Menú más compacto */
 }
 
 nav a:hover,
@@ -75,30 +76,14 @@ nav a.active {
 
 /* SECCIONES */
 .seccion {
-  padding: 50px 20px;
+  padding: 80px 20px;
   text-align: center;
-}
-
-/* 🔥 Fondo para la sección de inicio */
-#inicio {
-  background: url("fondo inicio.png") no-repeat center center/cover;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  padding: 100px 20px;
-  border-bottom: 2px solid #ccc;
-}
-
-#inicio h1 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#inicio p {
-  color: #f0f0f0;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  margin: 60px auto;
+  width: 90%;
+  max-width: 1000px;
+  backdrop-filter: blur(3px);
 }
 
 h1, h2 {
@@ -153,36 +138,30 @@ h1, h2 {
   text-align: left;
 }
 
-/* LISTA DE VALORES */
-.valores {
-  list-style: none;
-  margin-top: 10px;
-}
-.valores li {
-  margin-bottom: 8px;
-}
-
 /* FOOTER */
 footer {
-  background-color: #dcdcdc;
+  background-color: rgba(220, 220, 220, 0.9);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
   border-top: 2px solid #999;
+  backdrop-filter: blur(5px);
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .menu-icon { display: block; }
+  .menu-icon {
+    display: block;
+  }
 
   nav {
     display: none;
     flex-direction: column;
-    background-color: #e5e5e5;
+    background-color: rgba(229, 229, 229, 0.95);
     padding: 15px;
     position: absolute;
     right: 20px;
-    top: 70px;
+    top: 80px;
     border: 1px solid #999;
     border-radius: 8px;
   }
@@ -191,15 +170,18 @@ footer {
     display: flex;
   }
 
-  /* Ajuste del fondo en móvil */
-  #inicio {
-    background-position: center;
-    background-size: cover;
-    padding: 80px 20px;
+  nav a {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .seccion {
+    margin: 40px 10px;
+    padding: 50px 15px;
   }
 }
 
-/* 🔒 PARCHE: Asegurar menú cerrado al cargar en móvil */
+/* 🔒 Evita menú abierto al cargar */
 @media (max-width: 768px) {
   nav {
     display: none !important;

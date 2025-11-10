@@ -21,6 +21,16 @@ body.loaded .fade-container {
   opacity: 1;
 }
 
+/* BARRA BORGOÑA SUPERIOR */
+.top-bar {
+  background-color: #800020; /* color borgoña */
+  height: 6px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
 /* HEADER */
 .header {
   display: flex;
@@ -29,8 +39,9 @@ body.loaded .fade-container {
   background-color: #dcdcdc;
   padding: 10px 20px;
   position: sticky;
-  top: 0;
+  top: 6px; /* se suma debajo de la barra borgoña */
   border-bottom: 2px solid #999;
+  z-index: 1000;
 }
 
 .logo {

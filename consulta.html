@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReMexTTa | Consulta de Terapeutas</title>
+  <title>ReMexTTa | Terapeutas Certificados</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <style>
     /* --- Mantiene tu estilo original y solo ajusta el botón hamburguesa --- */
 
     .menu-icon {
-      font-size: 2rem;              /* mismo tamaño que el resto de páginas */
+      font-size: 2rem;
       cursor: pointer;
       display: none;
       position: relative;
-      right: 10px;                 /* centrado más visualmente */
+      right: 10px;
       color: #333;
     }
 
@@ -31,7 +31,7 @@
         padding: 15px;
         position: absolute;
         right: 20px;
-        top: 85px;                /* bajamos un poco para mejor alineación */
+        top: 85px;
         border: 1px solid #999;
         border-radius: 8px;
         z-index: 100;
@@ -63,7 +63,11 @@
         <nav id="menu">
           <a href="index.html">Inicio</a>
           <a href="quienes.html">Quiénes Somos</a>
-          <a href="consulta.html" class="active">Consulta</a>
+          <a href="consulta.html" class="active">Terapeutas Certificados</a>
+          <a href="asociados.html">Asociados Académicos</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html">Requisitos Académicos</a>
           <a href="contacto.html">Contacto</a>
         </nav>
       </div>
@@ -71,7 +75,7 @@
 
     <!-- Sección de consulta -->
     <section id="consulta" class="seccion">
-      <h2>Consulta de Terapeutas</h2>
+      <h2>Terapeutas Certificados</h2>
       <div class="buscador">
         <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
         <button onclick="buscar()">Buscar</button>

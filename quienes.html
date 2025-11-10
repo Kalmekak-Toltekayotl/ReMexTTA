@@ -6,6 +6,46 @@
   <title>Quiénes Somos | ReMexTTa</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    /* Solo ajustamos el botón hamburguesa un poco más a la derecha (-20 puntos más que el anterior ajuste) */
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      position: relative;
+      right: 10px; /* antes era -10, ahora 20 más a la derecha */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+        margin-right: 15px;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #e5e5e5;
+        padding: 15px;
+        position: absolute;
+        right: 20px;
+        top: 85px;
+        border: 1px solid #999;
+        border-radius: 8px;
+        z-index: 100;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="fade-container">
@@ -13,18 +53,20 @@
       <div class="header-left">
         <img src="logo.png" alt="Logo ReMexTTa" class="logo">
       </div>
+
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
       <div class="header-center">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <nav id="menu">
           <a href="index.html">Inicio</a>
           <a href="quienes.html" class="active">Quiénes Somos</a>
-          <a href="consulta.html">Consulta</a>
+          <a href="consulta.html">Terapeutas Certificados</a>
+          <a href="asociados.html">Asociados Académicos</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html">Requisitos Académicos</a>
           <a href="contacto.html">Contacto</a>
         </nav>
-      </div>
-      <div class="header-right">
-        <a href="https://www.facebook.com/profile.php?id=61566544212654" target="_blank" class="icono-red fb">f</a>
-        <a href="https://wa.me/525638006978" target="_blank" class="icono-red wa">💬</a>
       </div>
     </header>
 
@@ -77,7 +119,7 @@
     </section>
 
     <footer>
-      <p>© 2020 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
+      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
     </footer>
   </div>
 </body>

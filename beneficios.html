@@ -1,238 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beneficios | ReMexTTa</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="imagenes/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
   <style>
-    /* ======= Ajustes específicos para esta página ======= */
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #004d40;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 10px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      color: #ffd54f;
-    }
-
-    /* Menú hamburguesa */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
+    /* Ajuste fino: ícono hamburguesa movido 50px más a la derecha (30px más que quienes.html) */
+    .menu-icon {
+      font-size: 2rem;
       cursor: pointer;
-      position: absolute;
-      right: 30px; /* Ajuste de posición más a la derecha */
-      top: 20px;
-    }
-
-    .bar {
-      height: 3px;
-      width: 25px;
-      background-color: white;
-      margin: 3px 0;
-      border-radius: 2px;
+      display: none;
+      position: relative;
+      right: -50px; /* más a la derecha que en quienes */
+      color: #333;
     }
 
     @media (max-width: 768px) {
-      nav ul {
+      .menu-icon {
+        display: block;
+        margin-right: 15px;
+      }
+
+      nav {
         display: none;
         flex-direction: column;
-        width: 100%;
-        background-color: #004d40;
+        background-color: #e5e5e5;
+        padding: 15px;
         position: absolute;
-        top: 70px;
-        left: 0;
-        text-align: center;
+        right: 20px;
+        top: 85px;
+        border: 1px solid #999;
+        border-radius: 8px;
+        z-index: 100;
       }
 
-      nav ul.show {
+      nav.show {
         display: flex;
       }
 
-      .menu-toggle {
-        display: flex;
+      nav a {
+        padding: 10px 0;
+        font-size: 1.1rem;
       }
-
-      header img {
-        height: 55px;
-      }
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      color: #004d40;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #00796b;
-      margin-top: 30px;
-    }
-
-    section {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-    }
-
-    section img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    footer {
-      background-color: #004d40;
-      color: white;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
-      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="imagenes/logo.png" alt="Logo ReMexTTa">
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <nav>
-      <ul id="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="quienes.html">Quiénes Somos</a></li>
-        <li><a href="beneficios.html" class="activo">Beneficios</a></li>
-        <li><a href="registro.html">Registro</a></li>
-        <li><a href="directorio.html">Directorio</a></li>
-        <li><a href="capacitacion.html">Capacitación</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="fade-container">
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
 
-  <main>
-    <h1>Beneficios de formar parte del ReMexTTa</h1>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <section>
-      <img src="imagenes/beneficios1.jpg" alt="Profesionales certificados">
+      <div class="header-center">
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html">Terapeutas Certificados</a>
+          <a href="asociados.html">Asociados Académicos</a>
+          <a href="beneficios.html" class="active">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html">Requisitos Académicos</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="seccion">
+      <h1>Beneficios de formar parte del ReMexTTa</h1>
+
       <p>
-        Formar parte del <strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</strong> representa más que una inscripción: es el reconocimiento formal a tu trayectoria, conocimientos y compromiso con la salud integral y la medicina tradicional mexicana.
+        Formar parte del <strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</strong> 
+        representa un respaldo formal, profesional y ético que distingue a cada terapeuta como un prestador de servicios 
+        con preparación, constancia y compromiso hacia la salud integral y la medicina tradicional mexicana.
       </p>
-      <p>
-        Nuestro registro reúne a terapeutas certificados que comparten una visión profesional, ética y humanista del servicio terapéutico.
-      </p>
-    </section>
 
-    <section>
       <h2>1. Reconocimiento y respaldo profesional</h2>
       <p>
-        Tu registro otorga <strong>validez pública</strong> a tu preparación y práctica, al formar parte de una base de datos nacional que agrupa terapeutas con formación respaldada por constancias avaladas ante la <strong>SEP, STPS o el sistema SEP-CONOCER</strong>. Esto permite que tus servicios sean identificados como parte de un ejercicio profesional ético, capacitado y con evidencia documental de competencia.
+        Tu registro otorga <strong>validez pública</strong> a tu formación y práctica, integrándote a un sistema nacional 
+        que agrupa terapeutas con constancias emitidas por instituciones con aval ante la <strong>SEP, STPS y SEP-CONOCER</strong>. 
+        Este reconocimiento impulsa tu perfil como terapeuta capacitado, ético y con respaldo documental de tus competencias.
       </p>
-    </section>
 
-    <section>
       <h2>2. Confianza y prestigio ante tus usuarios</h2>
       <p>
-        Los usuarios que consultan el ReMexTTa tienen la seguridad de acudir con profesionales capacitados, evaluados y reconocidos, fomentando la confianza, la seguridad y la credibilidad en los servicios de medicina tradicional y terapias complementarias. Tu registro se convierte en una <strong>distinción de calidad y compromiso.</strong>
+        Los usuarios del ReMexTTa pueden verificar fácilmente tu registro, garantizando que reciben atención de un terapeuta 
+        con preparación formal, trayectoria comprobada y ética profesional. Tu inclusión fortalece la confianza, el prestigio 
+        y la seguridad en tus servicios.
       </p>
-    </section>
 
-    <section>
       <h2>3. Acceso a capacitación, actualización y certificación</h2>
       <p>
-        Como miembro del ReMexTTa, tendrás acceso a procesos de formación continua, evaluación por experiencia laboral y programas de regularización académica para consolidar tu perfil profesional conforme a los <strong>Estándares de Competencia del CONOCER</strong>, las <strong>Normas Oficiales Mexicanas de la Secretaría del Trabajo y Previsión Social</strong>, y con respaldo de la <strong>SEP Federal</strong>.
+        Al formar parte del ReMexTTa podrás participar en procesos de <strong>evaluación por experiencia laboral</strong>, 
+        formación continua y programas de actualización que consolidan tu práctica conforme a los <strong>Estándares de 
+        Competencia del CONOCER, las Normas Oficiales Mexicanas de la Secretaría del Trabajo y Previsión Social</strong> 
+        y con respaldo de la <strong>SEP Federal</strong>. Esto te permite fortalecer tus habilidades y mantener un perfil 
+        profesional competitivo y vigente.
       </p>
-    </section>
 
-    <section>
       <h2>4. Respaldo institucional</h2>
       <p>
-        El ReMexTTa actúa conforme a los principios establecidos en la <strong>Ley General de Educación</strong> y la <strong>Ley General de Salud</strong>, que promueven la participación de profesionales capacitados y reconocidos en los servicios de salud y educación no escolarizada, sin requerir RVOE, pero con sólida base jurídica y formativa.
+        El ReMexTTa se sustenta en lo establecido por la <strong>Ley General de Educación</strong> y la 
+        <strong>Ley General de Salud</strong>, promoviendo la participación de terapeutas calificados en servicios 
+        educativos y de salud sin requerir un RVOE, pero con una sólida base legal y académica que brinda seguridad 
+        y legitimidad a tu labor.
       </p>
-    </section>
 
-    <section>
       <h2>5. Proyección y oportunidades</h2>
       <p>
-        Tu inclusión en el ReMexTTa te da acceso a un <strong>directorio nacional visible al público</strong>, facilitando la promoción de tus servicios, la vinculación con instituciones afines y la participación en proyectos académicos, sociales y de certificación.
+        Al registrarte, tu perfil será visible en el <strong>Directorio Nacional de Terapeutas</strong>, incrementando 
+        tu visibilidad profesional y conectándote con una red de terapeutas, instituciones y oportunidades de colaboración 
+        académica o laboral dentro del ámbito de las terapias tradicionales y alternativas.
       </p>
-    </section>
 
-    <section>
-      <h2>6. Comunidad y pertenencia</h2>
+      <h2>6. Comunidad y sentido de pertenencia</h2>
       <p>
-        Al integrarte al ReMexTTa, te unes a una comunidad de terapeutas comprometidos con la ética, la calidad y el bienestar integral, contribuyendo a la preservación y desarrollo de la medicina tradicional mexicana desde una visión moderna y con respaldo institucional.
+        ReMexTTa fomenta una comunidad comprometida con la ética, el respeto cultural y la profesionalización constante. 
+        Ser parte de este registro te integra a un entorno de colaboración, crecimiento y reconocimiento mutuo, fortaleciendo 
+        la identidad de quienes ejercen con responsabilidad y amor a la medicina tradicional mexicana.
       </p>
-    </section>
 
-    <section>
-      <h2>En resumen</h2>
+      <h2>7. En resumen</h2>
       <p>
-        ReMexTTa impulsa el crecimiento y la formalización de terapeutas tradicionales y alternativos, fortaleciendo su reconocimiento social y profesional con base en competencia, ética y calidad certificada.
+        El ReMexTTa no solo reconoce tu experiencia, sino que también impulsa tu desarrollo profesional y el reconocimiento 
+        público de tu labor, brindándote respaldo institucional, capacitación y visibilidad ante la sociedad.
       </p>
-      <p><strong>Porque formar parte del ReMexTTa no solo es un reconocimiento, es un compromiso con la excelencia terapéutica.</strong></p>
+
+      <p><strong>Formar parte del ReMexTTa es pertenecer a una red nacional que promueve la calidad, la ética y el valor 
+      cultural de la medicina tradicional y alternativa mexicana.</strong></p>
+
+      <div style="margin-top: 30px; text-align: center;">
+        <img src="beneficios.jpg" alt="Beneficios ReMexTTa" style="max-width: 100%; border-radius: 10px;">
+      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2025 Registro Público Mexicano de Terapeutas Tradicionales y Alternativos | ReMexTTa</p>
-  </footer>
-
-  <script>
-    // ===== Menú móvil =====
-    const menuToggle = document.getElementById('mobile-menu');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
+    <footer>
+      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
+    </footer>
+  </div>
 </body>
 </html>

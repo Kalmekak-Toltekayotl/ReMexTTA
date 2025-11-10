@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asociados Académicos | ReMexTTa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+
+  <style>
+    /* Ajuste fino: mismo estilo que "quienes.html" */
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      position: relative;
+      right: -20px; /* mantiene alineación uniforme */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+        margin-right: 15px;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #e5e5e5;
+        padding: 15px;
+        position: absolute;
+        right: 20px;
+        top: 85px;
+        border: 1px solid #999;
+        border-radius: 8px;
+        z-index: 100;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Estilo para la cuadrícula de asociados */
+    .asociados-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .asociado {
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .asociado:hover {
+      transform: scale(1.03);
+    }
+
+    .asociado img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .asociado h3 {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="fade-container">
+    <!-- Encabezado -->
+    <header class="header">
+      <div class="header-left">
+        <img src="logo.png" alt="Logo ReMexTTa" class="logo">
+      </div>
+
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+      <div class="header-center">
+        <nav id="menu">
+          <a href="index.html">Inicio</a>
+          <a href="quienes.html">Quiénes Somos</a>
+          <a href="consulta.html">Terapeutas Certificados</a>
+          <a href="asociados.html" class="active">Asociados Académicos</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="directorio.html">Directorio de Negocios</a>
+          <a href="requisitos.html">Requisitos Académicos</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <section class="seccion">
+      <h1>Asociados Académicos</h1>
+      <p>
+        Nuestros <strong>asociados académicos</strong> forman parte del compromiso de <strong>ReMexTTa</strong> por brindar 
+        formación, evaluación y certificación con estándares de calidad respaldados por instituciones reconocidas a nivel nacional.
+      </p>
+      <p>
+        Cada institución y agente capacitador que se suma a nuestro registro comparte el propósito de elevar la calidad educativa, 
+        ética y profesional de los terapeutas tradicionales y alternativos en México.
+      </p>
+
+      <!-- Cuadrícula de asociados -->
+      <div class="asociados-grid">
+        <div class="asociado">
+          <img src="REDONDO_PRUEBA_3_FINAL.png" alt="Centro de Capacitación Kalmekak Toltekayotl">
+          <h3>CENTRO DE CAPACITACIÓN KALMEKAK TOLTEKAYOTL</h3>
+        </div>
+
+        <div class="asociado">
+          <img src="logooam.jpg" alt="OAM Capacitación">
+          <h3>OAM CAPACITACIÓN</h3>
+        </div>
+
+        <div class="asociado">
+          <img src="LOGOXOCHIPILLI.png" alt="Docente Leticia Zamudio Matías">
+          <h3>Docente Leticia Zamudio Matías</h3>
+        </div>
+
+        <div class="asociado">
+          <img src="logostpscursos.jpg" alt="Agentes Capacitadores Externos STPS">
+          <h3>Agentes Capacitadores Externos STPS</h3>
+        </div>
+
+        <div class="asociado">
+          <img src="cecatilogo.png" alt="Convenio con CECATI SEP Federal">
+          <h3>Convenio con CECATI SEP Federal</h3>
+        </div>
+
+        <div class="asociado">
+          <img src="CONOCERLOGO.png" alt="Certificados SEP-CONOCER">
+          <h3>Certificados SEP-CONOCER</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
+    </footer>
+  </div>
+</body>
+</html>

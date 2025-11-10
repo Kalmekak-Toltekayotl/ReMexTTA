@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* === Fondo general === */
 body {
   font-family: 'Montserrat', sans-serif;
+  background: url("fondo inicio.png") no-repeat center center fixed;
+  background-size: cover;
   background-color: #e5e5e5;
   color: #222;
 }
@@ -26,23 +29,32 @@ body.loaded .fade-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dcdcdc;
-  padding: 10px 20px;
+  background-color: rgba(220, 220, 220, 0.9); /* leve transparencia para resaltar sobre fondo */
+  padding: 10px 30px;
   position: sticky;
   top: 0;
   border-bottom: 2px solid #999;
+  backdrop-filter: blur(4px); /* efecto de vidrio sobre fondo */
 }
 
 .logo {
   height: 140px;
 }
 
-/* Menú centrado */
+/* Menú centrado con espacio respecto al logo */
 .header-center {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* espacio entre botones del menú */
+  margin-left: 60px; /* separa menú del logo */
 }
 
 .menu-icon {
@@ -51,58 +63,31 @@ body.loaded .fade-container {
   display: none;
 }
 
-/* 🔧 Menú con menor espaciado para que no se encime con el logo */
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px; /* antes 15px */
-}
-
 nav a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
   transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 nav a:hover,
 nav a.active {
   color: #000;
   border-bottom: 2px solid #666;
-}
-
-/* 🔥 Fondo para la sección de inicio */
-#inicio {
-  background: url("fondo inicio.png") no-repeat center center/cover;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-  padding: 100px 20px;
-  border-bottom: 2px solid #ccc;
-  min-height: 100vh; /* asegura que el fondo se vea completo */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#inicio h1 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#inicio p {
-  color: #f0f0f0;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* SECCIONES */
 .seccion {
   padding: 50px 20px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 30px auto;
+  border-radius: 10px;
+  max-width: 900px;
 }
 
 h1, h2 {
@@ -168,48 +153,45 @@ h1, h2 {
 
 /* FOOTER */
 footer {
-  background-color: #dcdcdc;
+  background-color: rgba(220, 220, 220, 0.9);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
   border-top: 2px solid #999;
+  backdrop-filter: blur(3px);
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .menu-icon { display: block; }
+  .menu-icon {
+    display: block;
+  }
 
   nav {
     display: none;
     flex-direction: column;
-    background-color: #e5e5e5;
+    background-color: rgba(229, 229, 229, 0.95);
     padding: 15px;
     position: absolute;
     right: 20px;
     top: 70px;
     border: 1px solid #999;
     border-radius: 8px;
+    z-index: 100;
   }
 
   nav.show {
     display: flex;
   }
 
-  #inicio {
-    min-height: 90vh; /* fondo más compacto en móvil */
-    padding: 60px 15px;
-  }
-
-  #inicio h1 {
-    font-size: 1.6rem;
-  }
-
-  #inicio p {
-    font-size: 1rem;
+  nav a {
+    background: none;
+    border: none;
+    padding: 10px 0;
   }
 }
 
-/* 🔒 PARCHE: Asegurar menú cerrado al cargar en móvil */
+/* 🔒 Parche: Asegurar menú cerrado al cargar en móvil */
 @media (max-width: 768px) {
   nav {
     display: none !important;

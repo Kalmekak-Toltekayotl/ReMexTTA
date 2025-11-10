@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <style>
-    /* Ajuste visual del botón hamburguesa */
+    /* === BOTÓN HAMBURGUESA === */
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
-      padding: 10px;
+      padding: 8px 12px;
       border-radius: 8px;
       transition: background 0.3s;
       margin-right: 20px;
@@ -22,16 +22,50 @@
       background: rgba(0, 0, 0, 0.05);
     }
 
+    /* === ESTILO DEL HEADER EN ESCRITORIO === */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      height: 65px;
+      width: auto;
+    }
+
+    #menu {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 0.95rem; /* más pequeño para evitar encimarse */
+      padding: 8px 10px;
+      transition: color 0.3s, background 0.3s;
+      border-radius: 6px;
+    }
+
+    #menu a:hover,
+    #menu a.active {
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    /* === VERSIÓN MÓVIL === */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
         position: relative;
-        right: 10px;
+        right: 5px;
         font-size: 2rem;
-      }
-
-      .header {
-        justify-content: space-between;
       }
 
       #menu {
@@ -39,12 +73,13 @@
         flex-direction: column;
         background: #fff;
         position: absolute;
-        top: 70px;
+        top: 75px;
         right: 10px;
         width: 85%;
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         border-radius: 10px;
         padding: 15px 0;
+        z-index: 100;
       }
 
       #menu.show {
@@ -72,30 +107,3 @@
           <a href="index.html">Inicio</a>
           <a href="quienes.html">Quiénes Somos</a>
           <a href="consulta.html" class="active">Terapeutas Certificados</a>
-          <a href="asociados.html">Asociados Académicos</a>
-          <a href="beneficios.html">Beneficios</a>
-          <a href="directorio.html">Directorio de Negocios</a>
-          <a href="requisitos.html">Requisitos Académicos</a>
-          <a href="contacto.html">Contacto</a>
-        </nav>
-      </div>
-
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </header>
-
-    <!-- Sección de consulta -->
-    <section id="consulta" class="seccion">
-      <h2>Terapeutas Certificados</h2>
-      <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
-        <button onclick="buscar()">Buscar</button>
-      </div>
-      <div id="resultados"></div>
-    </section>
-
-    <footer>
-      <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
-    </footer>
-  </div>
-</body>
-</html>

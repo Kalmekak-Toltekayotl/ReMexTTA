@@ -6,6 +6,7 @@
   <title>ReMexTTa | Terapeutas Certificados</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+
   <style>
     /* --- Mantiene tu estilo original y solo ajusta la posición del botón hamburguesa --- */
 
@@ -46,11 +47,52 @@
         font-size: 1.1rem;
       }
     }
+
+    /* ---- DISEÑO CONSULTA CON IMAGEN A LA IZQUIERDA ---- */
+
+    .consulta-contenedor {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .consulta-imagen img {
+      width: 380px;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .consulta-texto {
+      flex: 1;
+    }
+
+    .consulta-texto h2 {
+      margin-bottom: 20px;
+    }
+
+    /* RESPONSIVO: TEXTO ARRIBA, IMAGEN ABAJO */
+    @media (max-width: 768px) {
+      .consulta-contenedor {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .consulta-imagen img {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="barra-institucional"></div>
   <div class="fade-container">
+
     <!-- Encabezado -->
     <header class="header">
       <div class="header-left">
@@ -74,19 +116,36 @@
       </div>
     </header>
 
-    <!-- Sección de consulta -->
-    <section id="consulta" class="seccion">
-      <h2>Terapeutas Certificados</h2>
-      <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
-        <button onclick="buscar()">Buscar</button>
+    <!-- Sección de consulta con imagen izquierda -->
+    <section id="consulta" class="seccion consulta-con-imagen">
+
+      <div class="consulta-contenedor">
+
+        <!-- IMAGEN A LA IZQUIERDA -->
+        <div class="consulta-imagen">
+          <img src="terapeutas.png" alt="Terapeutas">
+        </div>
+
+        <!-- BUSCADOR A LA DERECHA -->
+        <div class="consulta-texto">
+          <h2>Terapeutas Certificados</h2>
+
+          <div class="buscador">
+            <input type="text" id="query" placeholder="Buscar por nombre, especialidad o clave...">
+            <button onclick="buscar()">Buscar</button>
+          </div>
+
+          <div id="resultados"></div>
+        </div>
+
       </div>
-      <div id="resultados"></div>
+
     </section>
 
     <footer>
       <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
     </footer>
+
   </div>
 </body>
 </html>

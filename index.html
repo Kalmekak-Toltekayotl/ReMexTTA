@@ -26,13 +26,44 @@
       background-color: #431f63;
     }
 
-    /* Para móviles: que se vea centrado automáticamente */
+    /* Contenedor con imagen a la derecha */
+    .inicio-contenido {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+    }
+
+    .inicio-texto {
+      flex: 1;
+    }
+
+    .inicio-imagen {
+      width: 350px;
+      max-width: 40%;
+    }
+
+    .inicio-imagen img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Para móviles: vuelve todo vertical */
     @media (max-width: 768px) {
       .btn-consulta {
         float: none;
         display: block;
         width: fit-content;
         margin: 15px auto 0 auto;
+      }
+
+      .inicio-contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .inicio-imagen {
+        max-width: 80%;
+        margin: 0 auto;
       }
     }
   </style>
@@ -63,14 +94,45 @@
     <!-- Sección de inicio -->
     <section id="inicio" class="seccion">
       <h1>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</h1>
-      <p>
-        Bienvenido(a) al Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa).
-        Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional
-        y terapias complementarias.
-      </p>
 
-      <!-- Botón profesional y elegante -->
-      <a class="btn-consulta" href="consulta.html">Consultar Terapeutas</a>
+      <div class="inicio-contenido">
+
+        <!-- Texto existente + nuevo texto -->
+        <div class="inicio-texto">
+          <p>
+            Bienvenido(a) al Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa).
+            Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional
+            y terapias complementarias.
+          </p>
+
+          <p>
+            <em>
+              ReMexTTa se ha consolidado como el estándar de calidad y confianza para terapeutas que desean
+              destacar profesionalmente. Este registro reconoce tu trayectoria, avala tus conocimientos y te
+              conecta con personas que buscan servicios seguros, éticos y verificados.
+              <br><br>
+              Formar parte de ReMexTTa es acceder a una identidad profesional respaldada, diseñada para fortalecer
+              tu prestigio y abrirte puertas a nuevas oportunidades dentro del ámbito tradicional y complementario.
+              Aquí, tu preparación no solo se valida: se visibiliza, se distingue y se posiciona como un referente
+              de excelencia.
+              <br><br>
+              Cada terapeuta inscrito en este registro se integra a una comunidad selecta, comprometida con el
+              profesionalismo, la responsabilidad y el crecimiento continuo. ReMexTTa es un espacio donde tu labor
+              adquiere reconocimiento, donde tu nombre se convierte en garantía y donde tu dedicación encuentra el
+              lugar que merece.
+            </em>
+          </p>
+
+          <!-- Botón profesional y elegante -->
+          <a class="btn-consulta" href="consulta.html">Consultar Terapeutas</a>
+        </div>
+
+        <!-- Imagen a la derecha -->
+        <div class="inicio-imagen">
+          <img src="inicio.png" alt="Imagen ReMexTTa">
+        </div>
+
+      </div>
     </section>
 
     <!-- Pie -->

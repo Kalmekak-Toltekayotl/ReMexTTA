@@ -39,7 +39,7 @@ body.loaded .fade-container {
   background-color: #dcdcdc;
   padding: 10px 20px;
   position: sticky;
-  top: 50px; /* se suma debajo de la barra borgoña */
+  top: 70px; /* se suma debajo de la barra borgoña */
   border-bottom: 2px solid #999;
   z-index: 1000;
 }

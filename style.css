@@ -18,7 +18,7 @@ body {
 /* Transición Fade */
 .fade-container {
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 1s ease;
 }
 body.loaded .fade-container {
   opacity: 1;

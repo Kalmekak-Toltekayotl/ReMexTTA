@@ -40,13 +40,34 @@ function buscar() {
         return;
       }
 
-      resultadosDiv.innerHTML = data.map(item => `
-        <div class="registro">
-          <h3>${item.nombre}</h3>
-          <p><strong>Especialidad:</strong> ${item.especialidad}</p>
-          <p><strong>Clave:</strong> ${item.clave}</p>
-        </div>
-      `).join('');
+      resultadosDiv.innerHTML = data.map(item => {
+
+        // Normalizamos texto para evitar problemas con mayúsculas/minúsculas
+        let texto = (item.especialidad || "").toLowerCase();
+
+        // Detectamos tipo de formación
+        let etiqueta = "Curso"; // Valor por defecto
+
+        if (texto.includes("especialidad")) {
+          etiqueta = "Especialidad";
+        } else if (texto.includes("diplomado")) {
+          etiqueta = "Diplomado";
+        } else if (
+          texto.includes("certificación") ||
+          texto.includes("certificacion") ||
+          texto.includes("certificado")
+        ) {
+          etiqueta = "Certificación";
+        }
+
+        return `
+          <div class="registro">
+            <h3>${item.nombre}</h3>
+            <p><strong>${etiqueta}:</strong> ${item.especialidad}</p>
+            <p><strong>Clave:</strong> ${item.clave}</p>
+          </div>
+        `;
+      }).join('');
     })
     .catch(err => {
       console.error(err);

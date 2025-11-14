@@ -6,6 +6,36 @@
   <title>ReMexTTa | Registro Público Mexicano de Terapeutas Tradicionales y Alternativos</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+
+  <style>
+    /* Botón elegante orientado a la derecha */
+    .btn-consulta {
+      display: inline-block;
+      background-color: #5a2a82;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      float: right;
+      margin-top: 10px;
+    }
+
+    .btn-consulta:hover {
+      background-color: #431f63;
+    }
+
+    /* Para móviles: que se vea centrado automáticamente */
+    @media (max-width: 768px) {
+      .btn-consulta {
+        float: none;
+        display: block;
+        width: fit-content;
+        margin: 15px auto 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="barra-institucional"></div>
@@ -38,16 +68,9 @@
         Aquí podrás consultar profesionales certificados en distintas áreas de la medicina tradicional
         y terapias complementarias.
       </p>
-    </section>
 
-    <!-- Buscador activo -->
-    <section id="consulta" class="seccion">
-      <h2>Consulta de Terapeutas</h2>
-      <div class="buscador">
-        <input type="text" id="query" placeholder="Buscar por nombre o clave...">
-        <button onclick="buscar()">Buscar</button>
-      </div>
-      <div id="resultados"></div>
+      <!-- Botón profesional y elegante -->
+      <a class="btn-consulta" href="consulta.html">Consultar Terapeutas</a>
     </section>
 
     <!-- Pie -->

@@ -6,14 +6,15 @@
   <title>Beneficios | ReMexTTa</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+
   <style>
-    /* Ajuste fino: ícono hamburguesa movido 50px más a la derecha (30px más que quienes.html) */
+    /* Ajuste fino: ícono hamburguesa movido 50px más a la derecha */
     .menu-icon {
       font-size: 2rem;
       cursor: pointer;
       display: none;
       position: relative;
-      right: -50px; /* más a la derecha que en quienes */
+      right: -50px;
       color: #333;
     }
 
@@ -45,11 +46,52 @@
         font-size: 1.1rem;
       }
     }
+
+    /* ======================================
+       NUEVO: distribución texto + imagen
+       ====================================== */
+    .beneficios-contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .beneficios-texto {
+      width: 50%;
+    }
+
+    .beneficios-imagen {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .beneficios-imagen img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* MODO CELULAR: texto arriba, imagen abajo */
+    @media (max-width: 768px) {
+      .beneficios-contenedor {
+        flex-direction: column;
+      }
+      .beneficios-texto,
+      .beneficios-imagen {
+        width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="barra-institucional"></div>
+
   <div class="fade-container">
+
     <header class="header">
       <div class="header-left">
         <img src="logo.png" alt="Logo ReMexTTa" class="logo">
@@ -74,74 +116,84 @@
     <section class="seccion">
       <h1>Beneficios de formar parte del ReMexTTa</h1>
 
-      <p>
-        Formar parte del <strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</strong> 
-        representa un respaldo formal, profesional y ético que distingue a cada terapeuta como un prestador de servicios 
-        con preparación, constancia y compromiso hacia la salud integral y la medicina tradicional mexicana.
-      </p>
+      <!-- NUEVO CONTENEDOR -->
+      <div class="beneficios-contenedor">
 
-      <h2>1. Reconocimiento y respaldo profesional</h2>
-      <p>
-        Tu registro otorga <strong>validez pública</strong> a tu formación y práctica, integrándote a un sistema nacional 
-        que agrupa terapeutas con constancias emitidas por instituciones con aval ante la <strong>SEP, STPS y SEP-CONOCER</strong>. 
-        Este reconocimiento impulsa tu perfil como terapeuta capacitado, ético y con respaldo documental de tus competencias.
-      </p>
+        <!-- TEXTO A LA IZQUIERDA -->
+        <div class="beneficios-texto">
 
-      <h2>2. Confianza y prestigio ante tus usuarios</h2>
-      <p>
-        Los usuarios del ReMexTTa pueden verificar fácilmente tu registro, garantizando que reciben atención de un terapeuta 
-        con preparación formal, trayectoria comprobada y ética profesional. Tu inclusión fortalece la confianza, el prestigio 
-        y la seguridad en tus servicios.
-      </p>
+          <p>
+            Formar parte del <strong>Registro Público Mexicano de Terapeutas Tradicionales y Alternativos (ReMexTTa)</strong> 
+            representa un respaldo formal, profesional y ético que distingue a cada terapeuta como un prestador de servicios 
+            con preparación, constancia y compromiso hacia la salud integral y la medicina tradicional mexicana.
+          </p>
 
-      <h2>3. Acceso a capacitación, actualización y certificación</h2>
-      <p>
-        Al formar parte del ReMexTTa podrás participar en procesos de <strong>evaluación por experiencia laboral</strong>, 
-        formación continua y programas de actualización que consolidan tu práctica conforme a los <strong>Estándares de 
-        Competencia del CONOCER, las Normas Oficiales Mexicanas de la Secretaría del Trabajo y Previsión Social</strong> 
-        y con respaldo de la <strong>SEP Federal</strong>. Esto te permite fortalecer tus habilidades y mantener un perfil 
-        profesional competitivo y vigente.
-      </p>
+          <h2>1. Reconocimiento y respaldo profesional</h2>
+          <p>
+            Tu registro otorga <strong>validez pública</strong> a tu formación y práctica, integrándote a un sistema nacional 
+            que agrupa terapeutas con constancias emitidas por instituciones con aval ante la <strong>SEP, STPS y SEP-CONOCER</strong>. 
+            Este reconocimiento impulsa tu perfil como terapeuta capacitado, ético y con respaldo documental de tus competencias.
+          </p>
 
-      <h2>4. Respaldo institucional</h2>
-      <p>
-        El ReMexTTa se sustenta en lo establecido por la <strong>Ley General de Educación</strong> y la 
-        <strong>Ley General de Salud</strong>, promoviendo la participación de terapeutas calificados en servicios 
-        educativos y de salud sin requerir un RVOE, pero con una sólida base legal y académica que brinda seguridad 
-        y legitimidad a tu labor.
-      </p>
+          <h2>2. Confianza y prestigio ante tus usuarios</h2>
+          <p>
+            Los usuarios del ReMexTTa pueden verificar fácilmente tu registro, garantizando que reciben atención de un terapeuta 
+            con preparación formal, trayectoria comprobada y ética profesional. Tu inclusión fortalece la confianza, el prestigio 
+            y la seguridad en tus servicios.
+          </p>
 
-      <h2>5. Proyección y oportunidades</h2>
-      <p>
-        Al registrarte, tu perfil será visible en el <strong>Directorio Nacional de Terapeutas</strong>, incrementando 
-        tu visibilidad profesional y conectándote con una red de terapeutas, instituciones y oportunidades de colaboración 
-        académica o laboral dentro del ámbito de las terapias tradicionales y alternativas.
-      </p>
+          <h2>3. Acceso a capacitación, actualización y certificación</h2>
+          <p>
+            Al formar parte del ReMexTTa podrás participar en procesos de <strong>evaluación por experiencia laboral</strong>, 
+            formación continua y programas de actualización que consolidan tu práctica conforme a los <strong>Estándares de 
+            Competencia del CONOCER, las Normas Oficiales Mexicanas de la Secretaría del Trabajo y Previsión Social</strong> 
+            y con respaldo de la <strong>SEP Federal</strong>.
+          </p>
 
-      <h2>6. Comunidad y sentido de pertenencia</h2>
-      <p>
-        ReMexTTa fomenta una comunidad comprometida con la ética, el respeto cultural y la profesionalización constante. 
-        Ser parte de este registro te integra a un entorno de colaboración, crecimiento y reconocimiento mutuo, fortaleciendo 
-        la identidad de quienes ejercen con responsabilidad y amor a la medicina tradicional mexicana.
-      </p>
+          <h2>4. Respaldo institucional</h2>
+          <p>
+            El ReMexTTa se sustenta en lo establecido por la <strong>Ley General de Educación</strong> y la 
+            <strong>Ley General de Salud</strong>, promoviendo la participación de terapeutas calificados en servicios 
+            educativos y de salud sin requerir un RVOE.
+          </p>
 
-      <h2>7. En resumen</h2>
-      <p>
-        El ReMexTTa no solo reconoce tu experiencia, sino que también impulsa tu desarrollo profesional y el reconocimiento 
-        público de tu labor, brindándote respaldo institucional, capacitación y visibilidad ante la sociedad.
-      </p>
+          <h2>5. Proyección y oportunidades</h2>
+          <p>
+            Al registrarte, tu perfil será visible en el <strong>Directorio Nacional de Terapeutas</strong>, incrementando 
+            tu visibilidad profesional y conectándote con una red de terapeutas, instituciones y oportunidades de colaboración.
+          </p>
 
-      <p><strong>Formar parte del ReMexTTa es pertenecer a una red nacional que promueve la calidad, la ética y el valor 
-      cultural de la medicina tradicional y alternativa mexicana.</strong></p>
+          <h2>6. Comunidad y sentido de pertenencia</h2>
+          <p>
+            ReMexTTa fomenta una comunidad comprometida con la ética, el respeto cultural y la profesionalización constante. 
+            Ser parte del registro te integra a un entorno de colaboración, crecimiento y reconocimiento.
+          </p>
 
-      <div style="margin-top: 30px; text-align: center;">
-        <img src="BENEFICIOS.png" alt="Beneficios ReMexTTa" style="max-width: 100%; border-radius: 10px;">
+          <h2>7. En resumen</h2>
+          <p>
+            El ReMexTTa no solo reconoce tu experiencia, sino que también impulsa tu desarrollo profesional y el reconocimiento 
+            público de tu labor, brindándote respaldo institucional, capacitación y visibilidad.
+          </p>
+
+          <p><strong>Formar parte del ReMexTTa es pertenecer a una red nacional que promueve la calidad, la ética y el valor 
+          cultural de la medicina tradicional y alternativa mexicana.</strong></p>
+
+        </div>
+
+        <!-- IMAGEN A LA DERECHA -->
+        <div class="beneficios-imagen">
+          <img src="BENEFICIOS.png" alt="Beneficios ReMexTTa">
+        </div>
+
       </div>
+      <!-- FIN CONTENEDOR -->
+
     </section>
 
     <footer>
       <p>© 2025 REGISTRO PÚBLICO MEXICANO DE TERAPEUTAS TRADICIONALES Y ALTERNATIVOS | ReMexTTa</p>
     </footer>
+
   </div>
 </body>
 </html>

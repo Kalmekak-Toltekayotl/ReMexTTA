@@ -39,7 +39,7 @@ body.loaded .fade-container {
   background-color: #dcdcdc;
   padding: 10px 20px;
   position: sticky;
-  top: 6px; /* se suma debajo de la barra borgoña */
+  top: 50px; /* se suma debajo de la barra borgoña */
   border-bottom: 2px solid #999;
   z-index: 1000;
 }
@@ -180,14 +180,13 @@ footer {
   nav.show {
     display: flex;
   }
-}
-/* Barra institucional superior */
+/* Barra institucional superior fija */
 .barra-institucional {
-  width: 100%;
-  height: 50px; /* Puedes subirlo a 30px o 40px si la quieres de 2 cm aprox */
-  background-color: #6A0E17; /* Color vino institucional */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999; /* Que esté por encima del header sin taparlo */
+    width: 100%;
+    height: 50px; /* Aproximado a 1.5–2 cm según pantalla */
+    background-color: #6A0E17; /* Color vino institucional */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }

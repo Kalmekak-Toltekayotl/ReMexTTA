@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+/* ===========================
+   GLOBAL
+   =========================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,17 +24,22 @@ body.loaded .fade-container {
   opacity: 1;
 }
 
-/* BARRA BORGOÑA SUPERIOR */
-.top-bar {
-  background-color: #800020; /* color borgoña */
-  height: 30px;
+/* ===========================
+   BARRA INSTITUCIONAL SUPERIOR
+   =========================== */
+.barra-institucional {
   width: 100%;
-  position: sticky;
+  height: 50px; /* altura institucional */
+  background-color: #6A0E17; /* vino institucional */
+  position: fixed;
   top: 0;
-  z-index: 1001;
+  left: 0;
+  z-index: 9999;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER
+   =========================== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -39,7 +47,7 @@ body.loaded .fade-container {
   background-color: #dcdcdc;
   padding: 10px 20px;
   position: sticky;
-  top: 50px; /* se suma debajo de la barra borgoña */
+  top: 50px; /* se coloca debajo de la barra institucional */
   border-bottom: 2px solid #999;
   z-index: 1000;
 }
@@ -82,7 +90,9 @@ nav a.active {
   border-bottom: 2px solid #666;
 }
 
-/* SECCIONES */
+/* ===========================
+   SECCIONES
+   =========================== */
 .seccion {
   padding: 50px 20px;
   text-align: center;
@@ -93,7 +103,9 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
-/* BUSCADOR */
+/* ===========================
+   BUSCADOR
+   =========================== */
 .buscador {
   margin: 20px auto;
   display: flex;
@@ -122,7 +134,9 @@ h1, h2 {
   background-color: #555;
 }
 
-/* RESULTADOS */
+/* ===========================
+   RESULTADOS
+   =========================== */
 #resultados {
   margin-top: 20px;
   display: grid;
@@ -140,7 +154,9 @@ h1, h2 {
   text-align: left;
 }
 
-/* LISTA DE VALORES */
+/* ===========================
+   LISTA DE VALORES
+   =========================== */
 .valores {
   list-style: none;
   margin-top: 10px;
@@ -149,7 +165,9 @@ h1, h2 {
   margin-bottom: 8px;
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+   =========================== */
 footer {
   background-color: #dcdcdc;
   text-align: center;
@@ -158,7 +176,9 @@ footer {
   border-top: 2px solid #999;
 }
 
-/* RESPONSIVO */
+/* ===========================
+   RESPONSIVO
+   =========================== */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -180,13 +200,4 @@ footer {
   nav.show {
     display: flex;
   }
-/* Barra institucional superior fija */
-.barra-institucional {
-    width: 100%;
-    height: 50px; /* Aproximado a 1.5–2 cm según pantalla */
-    background-color: #6A0E17; /* Color vino institucional */
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
 }
